@@ -59,9 +59,9 @@ const modeLabels: Record<Locale, Record<DemoMode, string>> = {
 
 const contactLinks = {
   github: 'https://github.com/zkbys',
-  email: '',
-  wechat: '',
-  phone: '',
+  email: 'mailto:zhengkaibys@163.com',
+  wechat: '_ZKbys_',
+  phone: 'tel:17857294938',
 };
 
 const copy: Record<
@@ -176,11 +176,11 @@ const copy: Record<
       demoSoon: 'Demo 待补',
       videoSoon: '视频待补',
       contactTitle: '联系与下一步',
-      contactBody: '这里先保留联系方式入口。你补充真实邮箱、微信、电话和简历 PDF 后，我会把按钮改成正式可用版本。',
+      contactBody: '可以通过邮箱、微信或电话联系我。简历 PDF 和其他平台链接后续再补充。',
       contactItems: [
-        { label: '邮箱', value: '待补充', kind: 'email' },
-        { label: '微信', value: '待补充', kind: 'wechat' },
-        { label: '电话', value: '待补充', kind: 'phone' },
+        { label: '邮箱', value: 'zhengkaibys@163.com', kind: 'email' },
+        { label: '微信', value: '_ZKbys_', kind: 'wechat' },
+        { label: '电话', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
         { label: '简历', value: 'PDF 待补', kind: 'resume' },
       ],
@@ -268,11 +268,11 @@ const copy: Record<
       demoSoon: 'Demo soon',
       videoSoon: 'Video soon',
       contactTitle: 'Contact and next steps',
-      contactBody: 'Contact entries are intentionally marked as placeholders. Once you provide email, WeChat, phone, and a resume PDF, I will wire them into production-ready links.',
+      contactBody: 'You can reach me by email, WeChat, or phone. Resume PDF and other profile links will be added later.',
       contactItems: [
-        { label: 'Email', value: 'To be added', kind: 'email' },
-        { label: 'WeChat', value: 'To be added', kind: 'wechat' },
-        { label: 'Phone', value: 'To be added', kind: 'phone' },
+        { label: 'Email', value: 'zhengkaibys@163.com', kind: 'email' },
+        { label: 'WeChat', value: '_ZKbys_', kind: 'wechat' },
+        { label: 'Phone', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
         { label: 'Resume', value: 'PDF pending', kind: 'resume' },
       ],
@@ -359,11 +359,11 @@ const copy: Record<
       demoSoon: 'Demo 待补',
       videoSoon: '视频待补',
       contactTitle: '把对话接到现实里',
-      contactBody: '这个版本先保留联系入口和简历按钮。等你补真实信息后，它可以变成更完整的个人名片。',
+      contactBody: '这个版本先放入邮箱、微信和电话。等你补简历 PDF 和更多平台链接后，它可以变成更完整的个人名片。',
       contactItems: [
-        { label: '邮箱', value: '待补充', kind: 'email' },
-        { label: '微信', value: '待补充', kind: 'wechat' },
-        { label: '电话', value: '待补充', kind: 'phone' },
+        { label: '邮箱', value: 'zhengkaibys@163.com', kind: 'email' },
+        { label: '微信', value: '_ZKbys_', kind: 'wechat' },
+        { label: '电话', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
         { label: '简历', value: 'PDF 待补', kind: 'resume' },
       ],
@@ -451,11 +451,11 @@ const copy: Record<
       demoSoon: 'Demo soon',
       videoSoon: 'Video soon',
       contactTitle: 'Bring the conversation into reality',
-      contactBody: 'This demo keeps contact and resume entry points visible. Once you provide real details, it can become a complete personal card.',
+      contactBody: 'This demo now includes email, WeChat, and phone contact points. Resume PDF and more profile links can be added later.',
       contactItems: [
-        { label: 'Email', value: 'To be added', kind: 'email' },
-        { label: 'WeChat', value: 'To be added', kind: 'wechat' },
-        { label: 'Phone', value: 'To be added', kind: 'phone' },
+        { label: 'Email', value: 'zhengkaibys@163.com', kind: 'email' },
+        { label: 'WeChat', value: '_ZKbys_', kind: 'wechat' },
+        { label: 'Phone', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
         { label: 'Resume', value: 'PDF pending', kind: 'resume' },
       ],
@@ -571,7 +571,10 @@ function ScrollRevealParagraph({ text }: { text: string }) {
   const totalChars = Math.max(letters.length - 1, 1);
 
   return (
-    <p ref={ref} className="mx-auto mt-8 max-w-2xl text-xs leading-[1.65] text-[#DEDBC8] sm:mt-10 sm:text-sm md:text-base">
+    <p
+      ref={ref}
+      className="relative mx-auto mt-8 max-w-2xl text-xs leading-[1.65] text-[#DEDBC8] sm:mt-10 sm:text-sm md:text-base"
+    >
       {letters.map((char, index) => {
         const charProgress = index / totalChars;
         const start = Math.max(0, charProgress - 0.1);
@@ -895,27 +898,38 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
         </div>
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {activeCopy.contactItems.map((item) => {
-            const isGithub = item.kind === 'github';
+            const href =
+              item.kind === 'github'
+                ? contactLinks.github
+                : item.kind === 'email'
+                  ? contactLinks.email
+                  : item.kind === 'phone'
+                    ? contactLinks.phone
+                    : '';
             const contentNode = (
               <>
-                <span className="text-primary/80">
+                <span className="text-primary/80 transition-colors duration-300 group-hover:text-black">
                   <ContactIcon kind={item.kind} />
                 </span>
                 <span>
-                  <span className="block text-[10px] uppercase tracking-[0.22em] text-gray-500">{item.label}</span>
-                  <span className="mt-1 block text-sm leading-tight text-primary">{item.value}</span>
+                  <span className="block text-[10px] uppercase tracking-[0.22em] text-gray-500 transition-colors duration-300 group-hover:text-black/60">
+                    {item.label}
+                  </span>
+                  <span className="mt-1 block text-sm leading-tight text-primary transition-colors duration-300 group-hover:text-black">
+                    {item.value}
+                  </span>
                 </span>
               </>
             );
 
-            if (isGithub) {
+            if (href) {
               return (
                 <a
                   key={item.kind}
-                  href={contactLinks.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex min-h-20 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3 transition-colors duration-300 hover:bg-primary hover:text-black"
+                  href={href}
+                  target={item.kind === 'github' ? '_blank' : undefined}
+                  rel={item.kind === 'github' ? 'noreferrer' : undefined}
+                  className="group flex min-h-20 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3 transition-colors duration-300 hover:bg-primary hover:text-black"
                 >
                   {contentNode}
                 </a>
