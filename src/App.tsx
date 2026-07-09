@@ -105,7 +105,7 @@ const copy: Record<
       ],
       heroKicker: 'AI Creator / Product Builder / Agent Workflow Designer',
       heroIntro:
-        '我正在寻找 AI 产品、Agent 工作流、提示词工程和创意技术相关机会。这个页面先展示我如何把模糊想法拆成可运行 Demo、可复用流程和可交付系统。',
+        '我是 ZKbys，一个 AI 产品与 Agent 工作流构建者。我擅长把模糊想法拆解成可运行 Demo、可复用流程和可展示作品，关注 AI 如何真正进入产品、内容和创作生产。',
       heroStatus: 'Open to AI product, agent workflow and creative technology opportunities.',
       primaryCta: '联系我',
       resumeCta: '简历待补',
@@ -113,11 +113,11 @@ const copy: Record<
       aboutLabel: 'AI portfolio',
       aboutHeading: [
         { text: '我是 ZKbys，', className: 'font-normal' },
-        { text: 'an AI product builder.', className: 'font-serif italic' },
-        { text: '我擅长把 Agent 工作流、产品设计和提示词工程连接成真实作品。', className: 'font-normal' },
+        { text: 'turning AI ideas into working systems.', className: 'font-serif italic' },
+        { text: '把产品、Agent 流程和内容自动化做成可体验的作品。', className: 'font-normal' },
       ],
       aboutBody:
-        '我关注的是 AI 如何真正进入生产流程：从需求拆解、脚本与提示词设计，到 Agent 编排、界面原型、内容管线和验证报告。现在的作品集中，我会优先展示能体现系统设计、产品判断和快速落地能力的项目。',
+        '我喜欢做介于产品、工程和创作之间的东西。对我来说，AI 不只是聊天工具，而是一套新的生产方式：它可以参与需求拆解、信息组织、内容生成、流程自动化、界面原型和质量检查。这个作品集会持续记录这些实验如何从想法变成真实系统。',
       timelineTitle: '代表性经历时间线',
       timeline: [
         {
@@ -132,12 +132,12 @@ const copy: Record<
         },
         {
           label: 'Now',
-          title: '开放 AI 相关机会',
-          body: '适合 AI 产品、Agent 工作流、提示词工程、内容自动化和创意技术方向的合作或岗位。',
+          title: '能解决的问题',
+          body: '适合参与 AI 产品早期原型、Agent 工作流设计、内容自动化管线和创意技术系统搭建。',
         },
       ],
-      methodTitle: '核心能力',
-      methods: ['Agent 工作流', 'AI 产品设计', '提示词工程'],
+      methodTitle: '我能解决什么问题',
+      methods: ['AI 想法转 Demo', 'Agent 工作流设计', '内容自动化管线'],
       featuresHeading: [
         { text: '以项目证明能力，', className: 'text-primary' },
         { text: '以流程展示可交付性。', className: 'text-gray-500' },
@@ -148,8 +148,8 @@ const copy: Record<
           number: '01',
           title: 'Whiteboard Pipeline.',
           eyebrow: 'Agent workflow / video pipeline',
-          description: '可审核的 AI 白板信息图视频流水线，把一次创意生产拆成脚本、规划、素材、时间轴、渲染和验收报告。',
-          items: ['模块化 Codex Skill 编排', '音频、动作、镜头节奏同步', 'HyperFrames 预览与 QA 验收'],
+          description: '一个可审核的 AI 白板信息图视频流水线。它不是一次性生成 MP4，而是把脚本、分镜、素材、音频、镜头、渲染和 QA 拆成清晰模块。',
+          items: ['Agent 工作流设计', '多模块生产管线', '人工审核与验收标准'],
           repo: 'https://github.com/zkbys/whiteboard',
           icon: projectIcons[0],
         },
@@ -157,8 +157,8 @@ const copy: Record<
           number: '02',
           title: 'Scrollish.',
           eyebrow: 'AI product / PWA learning',
-          description: '多巴胺英语习得 PWA，把刷内容的习惯迁移到真实英文互联网内容，并加入 AI 查词、翻译和追问。',
-          items: ['Reddit 内容流产品定位', 'AI 辅助阅读与追问', '复习机制和量化成长设想'],
+          description: '一个面向英语习得的 PWA 产品实验。它把“刷内容”的习惯迁移到真实英文互联网内容中，用 AI 查词、翻译和追问降低英文阅读门槛。',
+          items: ['AI 产品设计', '用户习惯迁移', '学习场景产品化'],
           repo: 'https://github.com/zkbys/Scrollish',
           icon: projectIcons[1],
         },
@@ -166,8 +166,8 @@ const copy: Record<
           number: '03',
           title: 'Reddit-to-Red.',
           eyebrow: 'Content automation / bilingual cards',
-          description: 'AI 内容自动化管线，把 Reddit 热点转换成小红书双语卡片、金句解析、语言点和可发布文案。',
-          items: ['Reddit 趋势抓取', '双语编辑与语言洞察', '杂志风格卡片与发布文案'],
+          description: '一个内容自动化管线，把 Reddit 热点转成适合小红书传播的双语卡片、金句解析、语言点和发布文案。',
+          items: ['内容自动化', '双语编辑流程', '社交平台内容包装'],
           repo: 'https://github.com/zkbys/Reddit-to-Red',
           icon: projectIcons[2],
         },
@@ -176,7 +176,7 @@ const copy: Record<
       demoSoon: 'Demo 待补',
       videoSoon: '视频待补',
       contactTitle: '联系与下一步',
-      contactBody: '可以通过邮箱、微信或电话联系我。简历 PDF 和其他平台链接后续再补充。',
+      contactBody: '如果你正在做 AI 产品、内容自动化或 Agent 工作流，我很适合参与早期原型和系统搭建。可以通过邮箱、微信或电话联系我。',
       contactItems: [
         { label: '邮箱', value: 'zhengkaibys@163.com', kind: 'email' },
         { label: '微信', value: '_ZKbys_', kind: 'wechat' },
@@ -194,7 +194,7 @@ const copy: Record<
       ],
       heroKicker: 'AI Creator / Product Builder / Agent Workflow Designer',
       heroIntro:
-        'I am open to AI product, agent workflow, prompt engineering, and creative technology opportunities. This site presents how I turn unclear ideas into runnable demos, reusable workflows, and reviewable systems.',
+        'I am ZKbys, an AI product and agent workflow builder. I turn early ideas into runnable demos, reusable workflows, and visible artifacts across product, content, and creative systems.',
       heroStatus: 'Open to AI product, agent workflow and creative technology opportunities.',
       primaryCta: 'Contact me',
       resumeCta: 'Resume soon',
@@ -202,11 +202,11 @@ const copy: Record<
       aboutLabel: 'AI portfolio',
       aboutHeading: [
         { text: 'I am ZKbys,', className: 'font-normal' },
-        { text: 'an AI product builder.', className: 'font-serif italic' },
-        { text: 'I connect agent workflows, product design, and prompt engineering into working artifacts.', className: 'font-normal' },
+        { text: 'turning AI ideas into working systems.', className: 'font-serif italic' },
+        { text: 'I build product experiments, agent flows, and content automation into usable artifacts.', className: 'font-normal' },
       ],
       aboutBody:
-        'My focus is how AI enters real production work: from requirement framing, scripts and prompts, to agent orchestration, interface prototypes, content pipelines, and acceptance reports. The portfolio prioritizes projects that show systems thinking, product judgment, and fast execution.',
+        'I build at the intersection of product, engineering, and creation. To me, AI is not just a chat interface, but a new production layer for framing problems, organizing information, generating content, automating workflows, prototyping interfaces, and checking quality.',
       timelineTitle: 'Representative timeline',
       timeline: [
         {
@@ -221,12 +221,12 @@ const copy: Record<
         },
         {
           label: 'Now',
-          title: 'Open to AI opportunities',
-          body: 'A fit for AI product, agent workflows, prompt engineering, content automation, and creative technology roles.',
+          title: 'Problems I can help with',
+          body: 'A fit for early AI product prototypes, agent workflow design, content automation pipelines, and creative technology systems.',
         },
       ],
-      methodTitle: 'Core strengths',
-      methods: ['Agent workflows', 'AI product design', 'Prompt engineering'],
+      methodTitle: 'What I can solve',
+      methods: ['AI ideas to demos', 'Agent workflow design', 'Content automation pipelines'],
       featuresHeading: [
         { text: 'Project proof for AI work.', className: 'text-primary' },
         { text: 'Readable systems, reviewable outcomes.', className: 'text-gray-500' },
@@ -238,8 +238,8 @@ const copy: Record<
           title: 'Whiteboard Pipeline.',
           eyebrow: 'Agent workflow / video pipeline',
           description:
-            'A reviewable AI whiteboard infographic video pipeline that separates creative production into scripts, planning, assets, timing, rendering, and acceptance reports.',
-          items: ['Modular Codex Skill orchestration', 'Audio, action, and camera synchronization', 'HyperFrames preview and QA gates'],
+            'A reviewable AI whiteboard infographic video pipeline. Instead of one-shot MP4 generation, it separates script, boards, assets, audio, camera, rendering, and QA into clear modules.',
+          items: ['Agent workflow design', 'Multi-module production pipeline', 'Human review and acceptance gates'],
           repo: 'https://github.com/zkbys/whiteboard',
           icon: projectIcons[0],
         },
@@ -248,8 +248,8 @@ const copy: Record<
           title: 'Scrollish.',
           eyebrow: 'AI product / PWA learning',
           description:
-            'A dopamine English acquisition PWA that redirects scrolling habits toward real English internet content, with AI-assisted lookup, translation, and follow-up.',
-          items: ['Reddit-based product framing', 'AI-assisted reading and questioning', 'Review loops and quantified progress concepts'],
+            'A PWA experiment for English acquisition. It redirects the habit of scrolling toward authentic English internet content, using AI lookup, translation, and follow-up to lower the reading barrier.',
+          items: ['AI product design', 'Habit migration', 'Learning scenario productization'],
           repo: 'https://github.com/zkbys/Scrollish',
           icon: projectIcons[1],
         },
@@ -258,8 +258,8 @@ const copy: Record<
           title: 'Reddit-to-Red.',
           eyebrow: 'Content automation / bilingual cards',
           description:
-            'An AI-powered pipeline that turns Reddit trends into bilingual XiaoHongShu cards, quote analysis, language insights, and ready-to-post captions.',
-          items: ['Reddit trend sourcing', 'Bilingual editorial processing', 'Magazine-style card and caption export'],
+            'A content automation pipeline that turns Reddit trends into bilingual XiaoHongShu cards, quote analysis, language points, and ready-to-post copy.',
+          items: ['Content automation', 'Bilingual editorial workflow', 'Social-platform content packaging'],
           repo: 'https://github.com/zkbys/Reddit-to-Red',
           icon: projectIcons[2],
         },
@@ -268,7 +268,7 @@ const copy: Record<
       demoSoon: 'Demo soon',
       videoSoon: 'Video soon',
       contactTitle: 'Contact and next steps',
-      contactBody: 'You can reach me by email, WeChat, or phone. Resume PDF and other profile links will be added later.',
+      contactBody: 'If you are building AI products, content automation, or agent workflows, I can help with early prototypes and system setup. Reach me by email, WeChat, or phone.',
       contactItems: [
         { label: 'Email', value: 'zhengkaibys@163.com', kind: 'email' },
         { label: 'WeChat', value: '_ZKbys_', kind: 'wechat' },
@@ -288,7 +288,7 @@ const copy: Record<
       ],
       heroKicker: 'AI Creator / Product Builder / Prompt Engineer',
       heroIntro:
-        '我把 AI 当成新的创作基础设施：从一句想法，到脚本、工具、自动化流程、内容系统和可展示作品。这个版本更强调个人风格和作品感。',
+        '我把 AI 当成新的创作基础设施：从一句想法，到脚本、工具、自动化流程、内容系统和可展示作品。我的兴趣是让 AI 不只停留在对话里，而是进入真实的创作和生产。',
       heroStatus: 'Building AI-native tools, workflows and content systems.',
       primaryCta: '聊聊合作',
       resumeCta: '简历待补',
@@ -296,11 +296,11 @@ const copy: Record<
       aboutLabel: 'creative systems',
       aboutHeading: [
         { text: '我是 ZKbys，', className: 'font-normal' },
-        { text: 'I build with AI as a studio.', className: 'font-serif italic' },
-        { text: '把内容、产品和 Agent 流程做成可以被体验的系统。', className: 'font-normal' },
+        { text: 'building with AI as a studio.', className: 'font-serif italic' },
+        { text: '把内容、产品和 Agent 流程做成可体验的系统。', className: 'font-normal' },
       ],
       aboutBody:
-        '我喜欢做介于产品和创作之间的东西：它们不只是一次性的演示，而是有输入、有流程、有产物、有反馈的系统。Agent 工作流是骨架，提示词工程是语言，产品设计决定它能不能被别人真正理解和使用。',
+        '我喜欢做介于产品和创作之间的东西。它们不只是一次性的演示，而是有输入、有流程、有产物、有反馈的系统。Agent 工作流是骨架，提示词工程是语言，产品设计决定它能不能被别人真正理解和使用。',
       timelineTitle: '我的创作方法',
       timeline: [
         {
@@ -316,10 +316,10 @@ const copy: Record<
         {
           label: 'Ship',
           title: '用作品表达能力',
-          body: '我更愿意拿可运行的 Demo、仓库、视频和卡片说话，而不是只停留在想法描述。',
+          body: '我更愿意拿可运行的 Demo、仓库、视频和卡片说话，用可见产物解释自己的能力。',
         },
       ],
-      methodTitle: '创作关键词',
+      methodTitle: '我能搭的系统',
       methods: ['AI-native workflow', 'Human-in-the-loop', 'Content systems'],
       featuresHeading: [
         { text: 'Three experiments,', className: 'text-primary' },
@@ -332,7 +332,7 @@ const copy: Record<
           title: 'Whiteboard Engine.',
           eyebrow: 'From topic to reviewable video',
           description: '把 AI 白板视频从“生成一个 MP4”改造成一条可检查、可替换、可复用的创作流水线。',
-          items: ['保留脚本、分镜、素材和时间轴', '把人工审核放进流程中', '用 QA 报告定义完成标准'],
+          items: ['保留脚本、分镜和素材', '把人工审核放进流程中', '用 QA 报告定义完成标准'],
           repo: 'https://github.com/zkbys/whiteboard',
           icon: projectIcons[0],
         },
@@ -341,7 +341,7 @@ const copy: Record<
           title: 'Dopamine Learning.',
           eyebrow: 'A playful English acquisition product',
           description: 'Scrollish 不是严肃背单词工具，而是把刷屏的多巴胺迁移到英文互联网真实语料里。',
-          items: ['无限流英语内容体验', 'AI 查词、翻译、追问', '从娱乐进入习得'],
+          items: ['无限流英语内容体验', 'AI 查词、翻译、追问', '把娱乐转成习得场景'],
           repo: 'https://github.com/zkbys/Scrollish',
           icon: projectIcons[1],
         },
@@ -349,8 +349,8 @@ const copy: Record<
           number: '03',
           title: 'Reddit to Red.',
           eyebrow: 'Bilingual cards from internet culture',
-          description: '把英文社区热点变成适合中文平台传播的双语卡片，让内容自动化也保留编辑审美。',
-          items: ['热点抓取与筛选', '金句和语言点提炼', '小红书风格卡片输出'],
+          description: '把英文社区热点变成适合中文平台传播的双语卡片，让内容自动化也保留编辑审美和平台语感。',
+          items: ['热点抓取与筛选', '金句和语言点提炼', '平台化卡片输出'],
           repo: 'https://github.com/zkbys/Reddit-to-Red',
           icon: projectIcons[2],
         },
@@ -359,7 +359,7 @@ const copy: Record<
       demoSoon: 'Demo 待补',
       videoSoon: '视频待补',
       contactTitle: '把对话接到现实里',
-      contactBody: '这个版本先放入邮箱、微信和电话。等你补简历 PDF 和更多平台链接后，它可以变成更完整的个人名片。',
+      contactBody: '如果你正在做 AI 产品、内容自动化或创意工作流，我适合参与从想法到原型的早期搭建。邮箱、微信和电话都可以联系我。',
       contactItems: [
         { label: '邮箱', value: 'zhengkaibys@163.com', kind: 'email' },
         { label: '微信', value: '_ZKbys_', kind: 'wechat' },
@@ -377,7 +377,7 @@ const copy: Record<
       ],
       heroKicker: 'AI Creator / Product Builder / Prompt Engineer',
       heroIntro:
-        'I treat AI as creative infrastructure: from a single idea to scripts, tools, automated workflows, content systems, and visible artifacts. This version leans more personal and portfolio-driven.',
+        'I treat AI as creative infrastructure: from a single idea to scripts, tools, automated workflows, content systems, and visible artifacts. My focus is moving AI beyond conversation into real creative and production work.',
       heroStatus: 'Building AI-native tools, workflows and content systems.',
       primaryCta: 'Start a conversation',
       resumeCta: 'Resume soon',
@@ -386,7 +386,7 @@ const copy: Record<
       aboutHeading: [
         { text: 'I am ZKbys,', className: 'font-normal' },
         { text: 'building with AI as a studio.', className: 'font-serif italic' },
-        { text: 'I turn content, product ideas, and agent flows into systems people can experience.', className: 'font-normal' },
+        { text: 'I turn content, product ideas, and agent flows into systems people can actually experience.', className: 'font-normal' },
       ],
       aboutBody:
         'I like building things between product and creation. They are not one-off demos; they have inputs, workflows, outputs, and feedback. Agent workflows provide the structure, prompt engineering gives them language, and product design decides whether other people can understand and use them.',
@@ -405,10 +405,10 @@ const copy: Record<
         {
           label: 'Ship',
           title: 'Let artifacts speak',
-          body: 'I prefer runnable demos, repositories, videos, and cards over abstract claims.',
+          body: 'I prefer runnable demos, repositories, videos, and cards that make the work visible.',
         },
       ],
-      methodTitle: 'Creative keywords',
+      methodTitle: 'Systems I can build',
       methods: ['AI-native workflow', 'Human-in-the-loop', 'Content systems'],
       featuresHeading: [
         { text: 'Three experiments,', className: 'text-primary' },
@@ -422,7 +422,7 @@ const copy: Record<
           eyebrow: 'From topic to reviewable video',
           description:
             'A whiteboard video pipeline that shifts the goal from one-shot MP4 generation to a reviewable, replaceable, reusable creative workflow.',
-          items: ['Preserves script, boards, assets, and timing', 'Keeps human review in the loop', 'Defines completion through QA reports'],
+          items: ['Preserves script, boards, and assets', 'Keeps human review in the loop', 'Defines completion through QA reports'],
           repo: 'https://github.com/zkbys/whiteboard',
           icon: projectIcons[0],
         },
@@ -432,7 +432,7 @@ const copy: Record<
           eyebrow: 'A playful English acquisition product',
           description:
             'Scrollish is not a strict vocabulary tool. It redirects the dopamine of scrolling toward authentic English internet content.',
-          items: ['Infinite-feed English content', 'AI lookup, translation, and follow-up', 'Entertainment as acquisition'],
+          items: ['Infinite-feed English content', 'AI lookup, translation, and follow-up', 'Entertainment as an acquisition scene'],
           repo: 'https://github.com/zkbys/Scrollish',
           icon: projectIcons[1],
         },
@@ -441,8 +441,8 @@ const copy: Record<
           title: 'Reddit to Red.',
           eyebrow: 'Bilingual cards from internet culture',
           description:
-            'A system that converts English community trends into bilingual cards for Chinese platforms while keeping editorial taste.',
-          items: ['Trend sourcing and filtering', 'Quote and language insight extraction', 'XiaoHongShu-style card output'],
+            'A system that converts English community trends into bilingual cards for Chinese platforms while keeping editorial taste and platform tone.',
+          items: ['Trend sourcing and filtering', 'Quote and language insight extraction', 'Platform-ready card output'],
           repo: 'https://github.com/zkbys/Reddit-to-Red',
           icon: projectIcons[2],
         },
@@ -451,7 +451,7 @@ const copy: Record<
       demoSoon: 'Demo soon',
       videoSoon: 'Video soon',
       contactTitle: 'Bring the conversation into reality',
-      contactBody: 'This demo now includes email, WeChat, and phone contact points. Resume PDF and more profile links can be added later.',
+      contactBody: 'If you are building AI products, content automation, or creative workflows, I can help move the idea into an early prototype. Email, WeChat, and phone are all available.',
       contactItems: [
         { label: 'Email', value: 'zhengkaibys@163.com', kind: 'email' },
         { label: 'WeChat', value: '_ZKbys_', kind: 'wechat' },
