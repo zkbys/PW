@@ -46,6 +46,23 @@ type ProjectCopy = {
   icon: string;
 };
 
+type CurrentFocusCopy = {
+  label: string;
+  status: string;
+  title: string;
+  body: string;
+};
+
+type CaseStudyCopy = {
+  label: string;
+  title: string;
+  summary: string;
+  pillars: Array<{ label: string; title: string; body: string }>;
+  flowLabel: string;
+  flow: string[];
+  repoLabel: string;
+};
+
 const modeLabels: Record<Locale, Record<DemoMode, string>> = {
   zh: {
     career: 'A 求职',
@@ -83,9 +100,11 @@ const copy: Record<
       timeline: Array<{ label: string; title: string; body: string }>;
       methodTitle: string;
       methods: string[];
+      currentFocus: CurrentFocusCopy;
       featuresHeading: StyledSegment[];
       videoCard: string;
       projects: ProjectCopy[];
+      caseStudy: CaseStudyCopy;
       githubLabel: string;
       demoSoon: string;
       videoSoon: string;
@@ -138,6 +157,12 @@ const copy: Record<
       ],
       methodTitle: '我能解决什么问题',
       methods: ['AI 想法转 Demo', 'Agent 工作流设计', '内容自动化管线'],
+      currentFocus: {
+        label: 'Currently / 最近在做',
+        status: '持续迭代中',
+        title: '把 Agent 工作流做得更像产品',
+        body: '目前持续完善 AI 白板视频流水线，重点处理模块协作、人工审核、质量验收和可复用交付；同时把这些方法迁移到新的 AI 产品原型中。',
+      },
       featuresHeading: [
         { text: '以项目证明能力，', className: 'text-primary' },
         { text: '以流程展示可交付性。', className: 'text-gray-500' },
@@ -172,6 +197,31 @@ const copy: Record<
           icon: projectIcons[2],
         },
       ],
+      caseStudy: {
+        label: 'Featured case study / 01',
+        title: 'Whiteboard Pipeline',
+        summary: '我把一个容易失控的“一键生成视频”任务，重新设计成一条分阶段、可审核、可继续编辑的 AI 内容生产系统。',
+        pillars: [
+          {
+            label: '问题',
+            title: '一次性结果难以复盘',
+            body: '只有最终 MP4 时，脚本、画面、节奏或镜头出了问题，很难定位和局部重做。',
+          },
+          {
+            label: '系统',
+            title: '把生产拆成清晰模块',
+            body: '脚本、语义规划、生图资产、白板控制、音频节奏、镜头和渲染分别保留中间产物。',
+          },
+          {
+            label: '验收',
+            title: '用证据定义完成',
+            body: '真实 timing、camera plan、关键帧和 QA 报告共同判断作品是否真的可交付。',
+          },
+        ],
+        flowLabel: '从想法到可验收视频',
+        flow: ['主题 / 粗稿', '脚本与分镜', '模型 PNG', '控制与渲染', 'QA 验收'],
+        repoLabel: '查看完整案例仓库',
+      },
       githubLabel: '查看 GitHub',
       demoSoon: 'Demo 待补',
       videoSoon: '视频待补',
@@ -227,6 +277,12 @@ const copy: Record<
       ],
       methodTitle: 'What I can solve',
       methods: ['AI ideas to demos', 'Agent workflow design', 'Content automation pipelines'],
+      currentFocus: {
+        label: 'Currently',
+        status: 'In active iteration',
+        title: 'Making agent workflows behave more like products',
+        body: 'I am refining the AI whiteboard video pipeline around modular collaboration, human review, quality gates, and reusable delivery, then carrying those patterns into new AI product prototypes.',
+      },
       featuresHeading: [
         { text: 'Project proof for AI work.', className: 'text-primary' },
         { text: 'Readable systems, reviewable outcomes.', className: 'text-gray-500' },
@@ -264,6 +320,31 @@ const copy: Record<
           icon: projectIcons[2],
         },
       ],
+      caseStudy: {
+        label: 'Featured case study / 01',
+        title: 'Whiteboard Pipeline',
+        summary: 'I redesigned an unpredictable one-click video task as a staged, reviewable, and editable AI content production system.',
+        pillars: [
+          {
+            label: 'Problem',
+            title: 'One-shot output is hard to debug',
+            body: 'When only the final MP4 remains, script, visual, rhythm, and camera problems are difficult to isolate or redo selectively.',
+          },
+          {
+            label: 'System',
+            title: 'Production becomes explicit modules',
+            body: 'Script, semantic planning, generated assets, board control, audio rhythm, camera, and rendering each preserve reviewable artifacts.',
+          },
+          {
+            label: 'Acceptance',
+            title: 'Evidence defines done',
+            body: 'Measured timing, camera plans, keyframes, and QA reports work together to determine whether the result is deliverable.',
+          },
+        ],
+        flowLabel: 'From idea to accepted video',
+        flow: ['Topic / draft', 'Script & boards', 'Model PNGs', 'Control & render', 'QA acceptance'],
+        repoLabel: 'Explore the full case repo',
+      },
       githubLabel: 'View GitHub',
       demoSoon: 'Demo soon',
       videoSoon: 'Video soon',
@@ -321,6 +402,12 @@ const copy: Record<
       ],
       methodTitle: '我能搭的系统',
       methods: ['AI-native workflow', 'Human-in-the-loop', 'Content systems'],
+      currentFocus: {
+        label: 'Currently / 最近在做',
+        status: '持续实验中',
+        title: '把创作过程变成可持续迭代的系统',
+        body: '最近围绕白板视频、内容自动化和 AI 原生创作工具做实验，关注从一个想法到可审核成品之间，那些经常被忽略但真正决定质量的中间层。',
+      },
       featuresHeading: [
         { text: 'Three experiments,', className: 'text-primary' },
         { text: 'one working style.', className: 'text-gray-500' },
@@ -355,6 +442,31 @@ const copy: Record<
           icon: projectIcons[2],
         },
       ],
+      caseStudy: {
+        label: 'Featured case study / 01',
+        title: 'Whiteboard Engine',
+        summary: '不是让 AI 更快地吐出一条视频，而是给创作保留脚本、画面、节奏、镜头和判断，让每一步都能被看见和重新选择。',
+        pillars: [
+          {
+            label: '起点',
+            title: '从一句主题开始',
+            body: '先保留表达立场，再把口播、视觉节奏和语义白板拆成可讨论的创作决定。',
+          },
+          {
+            label: '过程',
+            title: '让每个中间层可编辑',
+            body: '模型 PNG、控制层、音频 timing、镜头策略和 HyperFrames 工程都不是黑盒。',
+          },
+          {
+            label: '完成',
+            title: '用审查代替“看起来可以”',
+            body: '关键帧、资产一致性和 action / camera QA 让成品拥有明确的完成标准。',
+          },
+        ],
+        flowLabel: '一条可继续创作的流水线',
+        flow: ['主题', '表达与画面', '模型资产', '动作与镜头', '审查与交付'],
+        repoLabel: '打开创作系统',
+      },
       githubLabel: '打开仓库',
       demoSoon: 'Demo 待补',
       videoSoon: '视频待补',
@@ -410,6 +522,12 @@ const copy: Record<
       ],
       methodTitle: 'Systems I can build',
       methods: ['AI-native workflow', 'Human-in-the-loop', 'Content systems'],
+      currentFocus: {
+        label: 'Currently',
+        status: 'Actively experimenting',
+        title: 'Turning creative processes into systems that can keep evolving',
+        body: 'I am experimenting with whiteboard video, content automation, and AI-native creative tools, focusing on the often invisible middle layers between an idea and a reviewable final artifact.',
+      },
       featuresHeading: [
         { text: 'Three experiments,', className: 'text-primary' },
         { text: 'one working style.', className: 'text-gray-500' },
@@ -447,6 +565,31 @@ const copy: Record<
           icon: projectIcons[2],
         },
       ],
+      caseStudy: {
+        label: 'Featured case study / 01',
+        title: 'Whiteboard Engine',
+        summary: 'The goal is not a faster AI-generated video. It is a creative system that keeps script, image, rhythm, camera, and judgment visible enough to revise.',
+        pillars: [
+          {
+            label: 'Origin',
+            title: 'Start with one point of view',
+            body: 'Preserve the core stance first, then turn voiceover, visual rhythm, and semantic boards into discussable creative decisions.',
+          },
+          {
+            label: 'Process',
+            title: 'Keep every middle layer editable',
+            body: 'Model PNGs, control layers, audio timing, camera strategy, and the HyperFrames project stay outside the black box.',
+          },
+          {
+            label: 'Finish',
+            title: 'Replace “looks fine” with review',
+            body: 'Keyframes, asset identity, and action / camera QA create a concrete definition of completion.',
+          },
+        ],
+        flowLabel: 'A pipeline built for continued creation',
+        flow: ['Topic', 'Voice & image', 'Model assets', 'Motion & camera', 'Review & delivery'],
+        repoLabel: 'Open the creative system',
+      },
       githubLabel: 'Open repo',
       demoSoon: 'Demo soon',
       videoSoon: 'Video soon',
@@ -752,6 +895,27 @@ function Hero({
   );
 }
 
+function CurrentFocus({ focus }: { focus: CurrentFocusCopy }) {
+  return (
+    <div className="mt-10 border-t border-primary/10 pt-8 text-left">
+      <div className="grid gap-5 md:grid-cols-[0.7fr_1.3fr] md:items-start md:gap-10">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-primary/40" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+          </span>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{focus.label}</p>
+          <span className="rounded-full border border-primary/15 px-2.5 py-1 text-[10px] text-primary/70">{focus.status}</span>
+        </div>
+        <div>
+          <h3 className="max-w-2xl text-xl leading-tight text-primary sm:text-2xl">{focus.title}</h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-400">{focus.body}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
   const activeCopy = copy[mode][locale];
 
@@ -793,6 +957,8 @@ function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
             </div>
           </div>
         </div>
+
+        <CurrentFocus focus={activeCopy.currentFocus} />
       </div>
     </section>
   );
@@ -872,6 +1038,70 @@ function ProjectCard({
         </a>
         <span className="rounded-full border border-primary/15 px-3 py-2 text-xs text-primary/60">{demoSoon}</span>
         <span className="rounded-full border border-primary/15 px-3 py-2 text-xs text-primary/60">{videoSoon}</span>
+      </div>
+    </motion.article>
+  );
+}
+
+function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
+  const ref = useRef<HTMLElement | null>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.article
+      ref={ref}
+      className="mt-14 border-y border-primary/10 py-10 sm:mt-16 sm:py-12 md:mt-20 md:py-16"
+      initial={{ opacity: 0, y: 36 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
+      transition={{ duration: 0.8, ease: cardEase }}
+    >
+      <div className="grid gap-10 lg:grid-cols-[0.75fr_1.45fr] lg:gap-16">
+        <header>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.label}</p>
+          <h2 className="mt-4 text-4xl leading-[0.9] text-primary sm:text-5xl lg:text-6xl">{caseStudy.title}</h2>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base">{caseStudy.summary}</p>
+          <a
+            href="https://github.com/zkbys/whiteboard"
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-medium text-black transition-[gap] duration-300 hover:gap-3"
+          >
+            {caseStudy.repoLabel}
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </header>
+
+        <div>
+          <div className="grid gap-0 md:grid-cols-3">
+            {caseStudy.pillars.map((pillar, index) => (
+              <section
+                key={pillar.label}
+                className={`border-primary/10 py-5 md:px-5 md:py-0 ${index > 0 ? 'border-t md:border-l md:border-t-0' : ''}`}
+              >
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{pillar.label}</p>
+                <h3 className="mt-3 text-lg leading-tight text-primary">{pillar.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-400">{pillar.body}</p>
+              </section>
+            ))}
+          </div>
+
+          <div className="mt-10 border-t border-primary/10 pt-7">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.flowLabel}</p>
+            <ol className="mt-5 grid grid-cols-1 gap-x-4 sm:grid-cols-5">
+              {caseStudy.flow.map((step, index) => (
+                <li key={step} className="flex min-h-16 items-center justify-between gap-4 border-t border-primary/10 py-3 sm:min-h-28 sm:flex-col sm:items-start sm:py-4">
+                  <span className="text-[10px] text-gray-500">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-sm leading-tight text-primary">{step}</span>
+                  {index < caseStudy.flow.length - 1 ? (
+                    <ArrowRight className="h-4 w-4 shrink-0 text-primary/50 sm:self-end" aria-hidden="true" />
+                  ) : (
+                    <Check className="h-4 w-4 shrink-0 text-primary sm:self-end" aria-hidden="true" />
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </div>
     </motion.article>
   );
@@ -976,6 +1206,8 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
             />
           ))}
         </div>
+
+        <WhiteboardCaseStudy caseStudy={activeCopy.caseStudy} />
 
         <ContactPanel locale={locale} mode={mode} />
       </div>
