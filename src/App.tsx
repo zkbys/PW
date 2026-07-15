@@ -23,12 +23,14 @@ const canvasVideo =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4';
 
 const projectIcons = [
-  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-8c8b-53c43c220606.png&w=1280&q=85',
-  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
+  'https://placehold.co/200x200/E1E0CC/1a1a1a?text=WB',
   'https://placehold.co/200x200/E1E0CC/1a1a1a?text=RE',
   'https://placehold.co/200x200/E1E0CC/1a1a1a?text=PW',
+  'https://placehold.co/200x200/E1E0CC/1a1a1a?text=SC',
   'https://placehold.co/200x200/E1E0CC/1a1a1a?text=MS',
 ];
+
+const whiteboardDemoVideo = 'https://github.com/zkbys/whiteboard/releases/download/v0.2.0/preview.mp4';
 
 type Locale = 'zh' | 'en';
 type DemoMode = 'career' | 'creator';
@@ -59,6 +61,8 @@ type CaseStudyCopy = {
   label: string;
   title: string;
   summary: string;
+  socialProof?: string;
+  socialLinks?: Array<{ label: string; url: string }>;
   pillars: Array<{ label: string; title: string; body: string }>;
   flowLabel: string;
   flow: string[];
@@ -220,7 +224,13 @@ const copy: Record<
       caseStudy: {
         label: 'Featured case study / 01',
         title: 'Whiteboard Pipeline',
-        summary: '我把一个容易失控的“一键生成视频”任务，重新设计成一条分阶段、可审核、可继续编辑的 AI 内容生产系统。',
+        summary: '一句话输入主题，AI 自动生成一条完整的白板信息图讲解视频。从需求到成片的完整 Agent 工作流，让视频生产不再是“开盲盒”。',
+        socialProof: '该宣传视频在抖音、视频号、小红书三个平台累计获得近两万播放量，点赞收藏转发近千，收到大量积极反馈。',
+        socialLinks: [
+          { label: '抖音', url: 'https://v.douyin.com/vDn8YALrMT8/' },
+          { label: '视频号', url: 'https://weixin.qq.com/sph/AjpOy1aGPG' },
+          { label: '小红书', url: 'https://www.xiaohongshu.com/discovery/item/6a54b31a000000002101958f?source=webshare&xhsshare=pc_web&xsec_token=ABJe3ofgM3Ex2kyH6_-LliGOx7tz5soyJABqSjPmmWR6E=&xsec_source=pc_share' },
+        ],
         pillars: [
           {
             label: '问题',
@@ -363,7 +373,13 @@ const copy: Record<
       caseStudy: {
         label: 'Featured case study / 01',
         title: 'Whiteboard Pipeline',
-        summary: 'I redesigned an unpredictable one-click video task as a staged, reviewable, and editable AI content production system.',
+        summary: 'Type one topic, and AI generates a complete whiteboard infographic explainer video. A full Agent workflow from idea to delivery, making video production no longer a black box.',
+        socialProof: 'The promotional video gained nearly 20,000 views across Douyin, WeChat Channels, and Xiaohongshu, with nearly 1,000 likes, collections, and shares, receiving overwhelmingly positive feedback.',
+        socialLinks: [
+          { label: 'Douyin', url: 'https://v.douyin.com/vDn8YALrMT8/' },
+          { label: 'WeChat', url: 'https://weixin.qq.com/sph/AjpOy1aGPG' },
+          { label: 'Xiaohongshu', url: 'https://www.xiaohongshu.com/discovery/item/6a54b31a000000002101958f?source=webshare&xhsshare=pc_web&xsec_token=ABJe3ofgM3Ex2kyH6_-LliGOx7tz5soyJABqSjPmmWR6E=&xsec_source=pc_share' },
+        ],
         pillars: [
           {
             label: 'Problem',
@@ -836,12 +852,11 @@ function HeaderNav({
   locale,
   mode,
   setLocale,
-  setMode,
 }: {
   locale: Locale;
   mode: DemoMode;
   setLocale: (locale: Locale) => void;
-  setMode: (mode: DemoMode) => void;
+  setMode?: (mode: DemoMode) => void;
 }) {
   const activeCopy = copy[mode][locale];
 
@@ -861,14 +876,6 @@ function HeaderNav({
           ))}
         </div>
         <div className="flex items-center gap-1 rounded-full border border-primary/10 bg-white/[0.03] p-1">
-          <SegmentButton active={mode === 'career'} onClick={() => setMode('career')} ariaLabel="Show career demo">
-            {modeLabels[locale].career}
-          </SegmentButton>
-          <SegmentButton active={mode === 'creator'} onClick={() => setMode('creator')} ariaLabel="Show creator demo">
-            {modeLabels[locale].creator}
-          </SegmentButton>
-        </div>
-        <div className="flex items-center gap-1 rounded-full border border-primary/10 bg-white/[0.03] p-1">
           <Languages className="ml-1 h-3.5 w-3.5 text-primary/60" aria-hidden="true" />
           <SegmentButton active={locale === 'zh'} onClick={() => setLocale('zh')} ariaLabel="Switch to Chinese">
             中文
@@ -886,12 +893,11 @@ function Hero({
   locale,
   mode,
   setLocale,
-  setMode,
 }: {
   locale: Locale;
   mode: DemoMode;
   setLocale: (locale: Locale) => void;
-  setMode: (mode: DemoMode) => void;
+  setMode?: (mode: DemoMode) => void;
 }) {
   const activeCopy = copy[mode][locale];
 
@@ -902,7 +908,7 @@ function Hero({
         <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.7] mix-blend-overlay" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/70" />
 
-        <HeaderNav locale={locale} mode={mode} setLocale={setLocale} setMode={setMode} />
+        <HeaderNav locale={locale} mode={mode} setLocale={setLocale} />
 
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:px-10">
           <div className="grid grid-cols-1 items-end gap-5 lg:grid-cols-12 lg:gap-8">
@@ -1138,11 +1144,35 @@ function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
           <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.label}</p>
           <h2 className="mt-4 text-4xl leading-[0.9] text-primary sm:text-5xl lg:text-6xl">{caseStudy.title}</h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base">{caseStudy.summary}</p>
+
+          {caseStudy.socialProof ? (
+            <div className="mt-5 rounded-xl border border-primary/10 bg-white/[0.03] p-4">
+              <p className="text-sm leading-relaxed text-primary/80">{caseStudy.socialProof}</p>
+            </div>
+          ) : null}
+
+          {caseStudy.socialLinks && caseStudy.socialLinks.length > 0 ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {caseStudy.socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 px-3 py-1.5 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black"
+                >
+                  {link.label}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              ))}
+            </div>
+          ) : null}
+
           <a
             href="https://github.com/zkbys/whiteboard"
             target="_blank"
             rel="noreferrer"
-            className="group mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-medium text-black transition-[gap] duration-300 hover:gap-3"
+            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-medium text-black transition-[gap] duration-300 hover:gap-3"
           >
             {caseStudy.repoLabel}
             <ExternalLink className="h-3.5 w-3.5" />
@@ -1150,6 +1180,16 @@ function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
         </header>
 
         <div>
+          <div className="mb-8 overflow-hidden rounded-2xl bg-[#101010]">
+            <video
+              className="h-auto w-full"
+              src={whiteboardDemoVideo}
+              controls
+              preload="metadata"
+              playsInline
+            />
+          </div>
+
           <div className="grid gap-0 md:grid-cols-3">
             {caseStudy.pillars.map((pillar, index) => (
               <section
@@ -1295,11 +1335,11 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
 
 export default function App() {
   const [locale, setLocale] = useState<Locale>('zh');
-  const [mode, setMode] = useState<DemoMode>('career');
+  const mode: DemoMode = 'career';
 
   return (
     <main className="min-h-screen bg-black" style={{ color: cream }}>
-      <Hero locale={locale} mode={mode} setLocale={setLocale} setMode={setMode} />
+      <Hero locale={locale} mode={mode} setLocale={setLocale} />
       <About locale={locale} mode={mode} />
       <Features locale={locale} mode={mode} />
     </main>
