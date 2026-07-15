@@ -1074,14 +1074,10 @@ function ProjectCard({
   project,
   index,
   githubLabel,
-  demoSoon,
-  videoSoon,
 }: {
   project: ProjectCopy;
   index: number;
   githubLabel: string;
-  demoSoon: string;
-  videoSoon: string;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -1123,8 +1119,6 @@ function ProjectCard({
           {githubLabel}
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
-        <span className="rounded-full border border-primary/15 px-3 py-2 text-xs text-primary/60">{demoSoon}</span>
-        <span className="rounded-full border border-primary/15 px-3 py-2 text-xs text-primary/60">{videoSoon}</span>
       </div>
     </motion.article>
   );
@@ -1176,16 +1170,6 @@ function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
                 ))}
               </div>
             ) : null}
-
-            <a
-              href="https://github.com/zkbys/whiteboard"
-              target="_blank"
-              rel="noreferrer"
-              className="group mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-medium text-black transition-[gap] duration-300 hover:gap-3"
-            >
-              {caseStudy.repoLabel}
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
           </div>
         </header>
 
@@ -1329,8 +1313,6 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
               project={project}
               index={index}
               githubLabel={activeCopy.githubLabel}
-              demoSoon={activeCopy.demoSoon}
-              videoSoon={activeCopy.videoSoon}
             />
           ))}
         </div>
