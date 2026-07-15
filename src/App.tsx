@@ -23,9 +23,11 @@ const canvasVideo =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4';
 
 const projectIcons = [
-  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-ac8b-53c43c220606.png&w=1280&q=85',
+  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-8c8b-53c43c220606.png&w=1280&q=85',
   'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
-  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171809_f56666dc-c099-4778-ad82-9ad4f209567b.png&w=1280&q=85',
+  'https://placehold.co/200x200/E1E0CC/1a1a1a?text=RE',
+  'https://placehold.co/200x200/E1E0CC/1a1a1a?text=PW',
+  'https://placehold.co/200x200/E1E0CC/1a1a1a?text=MS',
 ];
 
 type Locale = 'zh' | 'en';
@@ -180,6 +182,24 @@ const copy: Record<
         },
         {
           number: '02',
+          title: 'Reverse Editing.',
+          eyebrow: 'Account-level video / reverse workflow',
+          description: '一套逆向剪辑工程，把已有爆款视频还原成可复用的账号资产：镜头索引、逆向时间线、拍摄分镜和可替换文案层。',
+          items: ['账号内容资产化', '逆向工程拆解', '可替换的模板化生产'],
+          repo: 'https://github.com/zkbys/reverse-editing',
+          icon: projectIcons[2],
+        },
+        {
+          number: '03',
+          title: 'PW.',
+          eyebrow: 'Personal portfolio / frontend system',
+          description: '你现在看到的个人网站，基于 React + Vite + Tailwind CSS + Framer Motion，作为 AI 产品能力的活简历。',
+          items: ['组件化视觉系统', 'A/B 与中英文切换', '响应式与动效'],
+          repo: 'https://github.com/zkbys/PW',
+          icon: projectIcons[3],
+        },
+        {
+          number: '04',
           title: 'Scrollish.',
           eyebrow: 'AI product / PWA learning',
           description: '一个面向英语习得的 PWA 产品实验。它把“刷内容”的习惯迁移到真实英文互联网内容中，用 AI 查词、翻译和追问降低英文阅读门槛。',
@@ -188,13 +208,13 @@ const copy: Record<
           icon: projectIcons[1],
         },
         {
-          number: '03',
-          title: 'Reddit-to-Red.',
-          eyebrow: 'Content automation / bilingual cards',
-          description: '一个内容自动化管线，把 Reddit 热点转成适合小红书传播的双语卡片、金句解析、语言点和发布文案。',
-          items: ['内容自动化', '双语编辑流程', '社交平台内容包装'],
-          repo: 'https://github.com/zkbys/Reddit-to-Red',
-          icon: projectIcons[2],
+          number: '05',
+          title: 'MSBA.',
+          eyebrow: 'AI security / MedCLIP research',
+          description: '医学视觉-语言模型的后门攻击与防御研究。在联邦学习场景下探索后门注入、模型评估与 Grad-CAM 可解释性分析。',
+          items: ['AI 安全研究', '联邦学习', '模型可解释性'],
+          repo: 'https://github.com/zkbys/MSBA',
+          icon: projectIcons[4],
         },
       ],
       caseStudy: {
@@ -301,6 +321,26 @@ const copy: Record<
         },
         {
           number: '02',
+          title: 'Reverse Editing.',
+          eyebrow: 'Account-level video / reverse workflow',
+          description:
+            'A reverse editing system that turns proven videos into reusable account assets: shot indices, reverse timelines, shooting boards, and replaceable copy layers.',
+          items: ['Account content assetization', 'Reverse engineering decomposition', 'Replaceable templated production'],
+          repo: 'https://github.com/zkbys/reverse-editing',
+          icon: projectIcons[2],
+        },
+        {
+          number: '03',
+          title: 'PW.',
+          eyebrow: 'Personal portfolio / frontend system',
+          description:
+            'The personal website you are viewing, built with React, Vite, Tailwind CSS, and Framer Motion, serving as a living CV for AI product work.',
+          items: ['Component-based visual system', 'A/B and bilingual switching', 'Responsive and motion design'],
+          repo: 'https://github.com/zkbys/PW',
+          icon: projectIcons[3],
+        },
+        {
+          number: '04',
           title: 'Scrollish.',
           eyebrow: 'AI product / PWA learning',
           description:
@@ -310,14 +350,14 @@ const copy: Record<
           icon: projectIcons[1],
         },
         {
-          number: '03',
-          title: 'Reddit-to-Red.',
-          eyebrow: 'Content automation / bilingual cards',
+          number: '05',
+          title: 'MSBA.',
+          eyebrow: 'AI security / MedCLIP research',
           description:
-            'A content automation pipeline that turns Reddit trends into bilingual XiaoHongShu cards, quote analysis, language points, and ready-to-post copy.',
-          items: ['Content automation', 'Bilingual editorial workflow', 'Social-platform content packaging'],
-          repo: 'https://github.com/zkbys/Reddit-to-Red',
-          icon: projectIcons[2],
+            'Backdoor attacks and defenses in Medical Vision-Language Models (MedCLIP). Includes federated learning, backdoor injection, model evaluation, and Grad-CAM explainability analysis.',
+          items: ['AI security research', 'Federated learning', 'Model explainability'],
+          repo: 'https://github.com/zkbys/MSBA',
+          icon: projectIcons[4],
         },
       ],
       caseStudy: {
@@ -409,7 +449,7 @@ const copy: Record<
         body: '最近围绕白板视频、内容自动化和 AI 原生创作工具做实验，关注从一个想法到可审核成品之间，那些经常被忽略但真正决定质量的中间层。',
       },
       featuresHeading: [
-        { text: 'Three experiments,', className: 'text-primary' },
+        { text: 'Projects and experiments,', className: 'text-primary' },
         { text: 'one working style.', className: 'text-gray-500' },
       ],
       videoCard: 'A personal lab for AI-native products and visual systems.',
@@ -425,6 +465,24 @@ const copy: Record<
         },
         {
           number: '02',
+          title: 'Reverse Editing.',
+          eyebrow: 'Reverse engineering video for reuse',
+          description: '把别人的爆款视频当作学习样本，逆向拆解成镜头结构、节奏和文案层，再生成可替换的账号内容模板。',
+          items: ['从成品反推结构', '镜头级节奏分析', '可复用的创作模板'],
+          repo: 'https://github.com/zkbys/reverse-editing',
+          icon: projectIcons[2],
+        },
+        {
+          number: '03',
+          title: 'PW.',
+          eyebrow: 'Personal site as a design system',
+          description: '这个作品集本身也是一个作品：一个可切换中英文、可切换求职/创作者双版本的展示系统。',
+          items: ['双语双版本切换', '组件化页面系统', '设计即代码'],
+          repo: 'https://github.com/zkbys/PW',
+          icon: projectIcons[3],
+        },
+        {
+          number: '04',
           title: 'Dopamine Learning.',
           eyebrow: 'A playful English acquisition product',
           description: 'Scrollish 不是严肃背单词工具，而是把刷屏的多巴胺迁移到英文互联网真实语料里。',
@@ -433,13 +491,13 @@ const copy: Record<
           icon: projectIcons[1],
         },
         {
-          number: '03',
-          title: 'Reddit to Red.',
-          eyebrow: 'Bilingual cards from internet culture',
-          description: '把英文社区热点变成适合中文平台传播的双语卡片，让内容自动化也保留编辑审美和平台语感。',
-          items: ['热点抓取与筛选', '金句和语言点提炼', '平台化卡片输出'],
-          repo: 'https://github.com/zkbys/Reddit-to-Red',
-          icon: projectIcons[2],
+          number: '05',
+          title: 'MSBA.',
+          eyebrow: 'AI safety in medical models',
+          description: '在医学视觉-语言模型中探索后门攻击与防御。把安全研究从概念变成可运行的联邦学习实验与 Grad-CAM 可视化。',
+          items: ['后门攻击与防御实验', '联邦学习系统搭建', 'Grad-CAM 可解释性'],
+          repo: 'https://github.com/zkbys/MSBA',
+          icon: projectIcons[4],
         },
       ],
       caseStudy: {
@@ -529,7 +587,7 @@ const copy: Record<
         body: 'I am experimenting with whiteboard video, content automation, and AI-native creative tools, focusing on the often invisible middle layers between an idea and a reviewable final artifact.',
       },
       featuresHeading: [
-        { text: 'Three experiments,', className: 'text-primary' },
+        { text: 'Projects and experiments,', className: 'text-primary' },
         { text: 'one working style.', className: 'text-gray-500' },
       ],
       videoCard: 'A personal lab for AI-native products and visual systems.',
@@ -546,6 +604,26 @@ const copy: Record<
         },
         {
           number: '02',
+          title: 'Reverse Editing.',
+          eyebrow: 'Reverse engineering video for reuse',
+          description:
+            'Treating proven videos as learning samples, reverse-engineering them into shot structures, rhythm, and copy layers, then generating replaceable account content templates.',
+          items: ['Infer structure from finished work', 'Shot-level rhythm analysis', 'Reusable creation templates'],
+          repo: 'https://github.com/zkbys/reverse-editing',
+          icon: projectIcons[2],
+        },
+        {
+          number: '03',
+          title: 'PW.',
+          eyebrow: 'Personal site as a design system',
+          description:
+            'This portfolio itself is a work: a bilingual, dual-mode presentation system that switches between career and creator versions.',
+          items: ['Bilingual and dual-mode switching', 'Component-based page system', 'Design as code'],
+          repo: 'https://github.com/zkbys/PW',
+          icon: projectIcons[3],
+        },
+        {
+          number: '04',
           title: 'Dopamine Learning.',
           eyebrow: 'A playful English acquisition product',
           description:
@@ -555,14 +633,14 @@ const copy: Record<
           icon: projectIcons[1],
         },
         {
-          number: '03',
-          title: 'Reddit to Red.',
-          eyebrow: 'Bilingual cards from internet culture',
+          number: '05',
+          title: 'MSBA.',
+          eyebrow: 'AI safety in medical models',
           description:
-            'A system that converts English community trends into bilingual cards for Chinese platforms while keeping editorial taste and platform tone.',
-          items: ['Trend sourcing and filtering', 'Quote and language insight extraction', 'Platform-ready card output'],
-          repo: 'https://github.com/zkbys/Reddit-to-Red',
-          icon: projectIcons[2],
+            'Exploring backdoor attacks and defenses in medical vision-language models. Turning security research from concepts into runnable federated learning experiments and Grad-CAM visualizations.',
+          items: ['Backdoor attack & defense experiments', 'Federated learning system setup', 'Grad-CAM explainability'],
+          repo: 'https://github.com/zkbys/MSBA',
+          icon: projectIcons[4],
         },
       ],
       caseStudy: {
@@ -1193,7 +1271,7 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           />
         </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:gap-2 md:grid-cols-2 md:gap-1 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:gap-2 md:grid-cols-2 md:gap-1 lg:grid-cols-3">
           <FeatureVideoCard text={activeCopy.videoCard} />
           {activeCopy.projects.map((project, index) => (
             <ProjectCard
