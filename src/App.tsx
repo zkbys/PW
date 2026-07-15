@@ -61,6 +61,7 @@ type CaseStudyCopy = {
   label: string;
   title: string;
   summary: string;
+  videoCaption?: string;
   socialProof?: string;
   socialLinks?: Array<{ label: string; url: string }>;
   pillars: Array<{ label: string; title: string; body: string }>;
@@ -373,8 +374,9 @@ const copy: Record<
       caseStudy: {
         label: 'Featured case study / 01',
         title: 'Whiteboard Pipeline',
-        summary: 'Type one topic, and AI generates a complete whiteboard infographic explainer video. A full Agent workflow from idea to delivery, making video production no longer a black box.',
-        socialProof: 'The promotional video gained nearly 20,000 views across Douyin, WeChat Channels, and Xiaohongshu, with nearly 1,000 likes, collections, and shares, receiving overwhelmingly positive feedback.',
+        summary: 'Type one topic, and AI generates a complete whiteboard infographic explainer video. This is not just "one-click generation"—it is a production pipeline where every step is reviewable and editable.',
+        videoCaption: 'The video on the right (0:43) was generated from a single topic input. Every scene, text, and animation was produced by AI following a structured workflow.',
+        socialProof: 'This skill also gained significant attention on Douyin, WeChat Channels, and Xiaohongshu, with nearly 20,000 views and ~1,000 interactions. Many people are interested in the idea of "one sentence, one video".',
         socialLinks: [
           { label: 'Douyin', url: 'https://v.douyin.com/vDn8YALrMT8/' },
           { label: 'WeChat', url: 'https://weixin.qq.com/sph/AjpOy1aGPG' },
@@ -383,22 +385,22 @@ const copy: Record<
         pillars: [
           {
             label: 'Problem',
-            title: 'One-shot output is hard to debug',
-            body: 'When only the final MP4 remains, script, visual, rhythm, and camera problems are difficult to isolate or redo selectively.',
+            title: 'Traditional AI video = a black box',
+            body: 'Input topic → wait → get a final video. If it is not right, you start over with no idea what went wrong.',
           },
           {
-            label: 'System',
-            title: 'Production becomes explicit modules',
-            body: 'Script, semantic planning, generated assets, board control, audio rhythm, camera, and rendering each preserve reviewable artifacts.',
+            label: 'Solution',
+            title: 'Split into 5 reviewable steps',
+            body: 'Each step preserves intermediate outputs that can be modified independently. Like giving AI a quality-controlled production line.',
           },
           {
-            label: 'Acceptance',
-            title: 'Evidence defines done',
-            body: 'Measured timing, camera plans, keyframes, and QA reports work together to determine whether the result is deliverable.',
+            label: 'Result',
+            title: 'One sentence to a video, with precision editing',
+            body: 'The video on the right was generated from just one topic. Any step can be refined without starting from scratch.',
           },
         ],
-        flowLabel: 'From idea to accepted video',
-        flow: ['Topic / draft', 'Script & boards', 'Model PNGs', 'Control & render', 'QA acceptance'],
+        flowLabel: 'How it works',
+        flow: ['Topic input', 'Content generation', 'Visual creation', 'Video synthesis', 'Quality check'],
         repoLabel: 'Explore the full case repo',
       },
       githubLabel: 'View GitHub',
@@ -1139,87 +1141,94 @@ function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
       transition={{ duration: 0.8, ease: cardEase }}
     >
-      <div className="grid gap-10 lg:grid-cols-[0.75fr_1.45fr] lg:gap-16">
-        <header>
+      {/* Header + Video: side by side */}
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <header className="flex flex-col">
           <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.label}</p>
-          <h2 className="mt-4 text-4xl leading-[0.9] text-primary sm:text-5xl lg:text-6xl">{caseStudy.title}</h2>
+          <h2 className="mt-4 text-4xl leading-[0.9] text-primary sm:text-5xl">{caseStudy.title}</h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base">{caseStudy.summary}</p>
 
-          {caseStudy.socialProof ? (
-            <div className="mt-5 rounded-xl border border-primary/10 bg-white/[0.03] p-4">
-              <p className="text-sm leading-relaxed text-primary/80">{caseStudy.socialProof}</p>
-            </div>
+          {caseStudy.videoCaption ? (
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary/70">{caseStudy.videoCaption}</p>
           ) : null}
 
-          {caseStudy.socialLinks && caseStudy.socialLinks.length > 0 ? (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {caseStudy.socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 px-3 py-1.5 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black"
-                >
-                  {link.label}
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              ))}
-            </div>
-          ) : null}
+          <div className="mt-auto pt-6">
+            {caseStudy.socialProof ? (
+              <div className="rounded-xl border border-primary/10 bg-white/[0.03] p-4">
+                <p className="text-sm leading-relaxed text-primary/80">{caseStudy.socialProof}</p>
+              </div>
+            ) : null}
 
-          <a
-            href="https://github.com/zkbys/whiteboard"
-            target="_blank"
-            rel="noreferrer"
-            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-medium text-black transition-[gap] duration-300 hover:gap-3"
-          >
-            {caseStudy.repoLabel}
-            <ExternalLink className="h-3.5 w-3.5" />
-          </a>
+            {caseStudy.socialLinks && caseStudy.socialLinks.length > 0 ? (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {caseStudy.socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 px-3 py-1.5 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black"
+                  >
+                    {link.label}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                ))}
+              </div>
+            ) : null}
+
+            <a
+              href="https://github.com/zkbys/whiteboard"
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-medium text-black transition-[gap] duration-300 hover:gap-3"
+            >
+              {caseStudy.repoLabel}
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          </div>
         </header>
 
-        <div>
-          <div className="mb-8 overflow-hidden rounded-2xl bg-[#101010]">
-            <video
-              className="h-auto w-full"
-              src={whiteboardDemoVideo}
-              controls
-              preload="metadata"
-              playsInline
-            />
-          </div>
-
-          <div className="grid gap-0 md:grid-cols-3">
-            {caseStudy.pillars.map((pillar, index) => (
-              <section
-                key={pillar.label}
-                className={`border-primary/10 py-5 md:px-5 md:py-0 ${index > 0 ? 'border-t md:border-l md:border-t-0' : ''}`}
-              >
-                <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{pillar.label}</p>
-                <h3 className="mt-3 text-lg leading-tight text-primary">{pillar.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-400">{pillar.body}</p>
-              </section>
-            ))}
-          </div>
-
-          <div className="mt-10 border-t border-primary/10 pt-7">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.flowLabel}</p>
-            <ol className="mt-5 grid grid-cols-1 gap-x-4 sm:grid-cols-5">
-              {caseStudy.flow.map((step, index) => (
-                <li key={step} className="flex min-h-16 items-center justify-between gap-4 border-t border-primary/10 py-3 sm:min-h-28 sm:flex-col sm:items-start sm:py-4">
-                  <span className="text-[10px] text-gray-500">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="text-sm leading-tight text-primary">{step}</span>
-                  {index < caseStudy.flow.length - 1 ? (
-                    <ArrowRight className="h-4 w-4 shrink-0 text-primary/50 sm:self-end" aria-hidden="true" />
-                  ) : (
-                    <Check className="h-4 w-4 shrink-0 text-primary sm:self-end" aria-hidden="true" />
-                  )}
-                </li>
-              ))}
-            </ol>
-          </div>
+        <div className="overflow-hidden rounded-2xl bg-[#101010]">
+          <video
+            className="h-auto w-full"
+            src={whiteboardDemoVideo}
+            controls
+            preload="metadata"
+            playsInline
+          />
         </div>
+      </div>
+
+      {/* Pillars: full width */}
+      <div className="mt-12 grid gap-0 md:grid-cols-3">
+        {caseStudy.pillars.map((pillar, index) => (
+          <section
+            key={pillar.label}
+            className={`border-primary/10 py-6 md:px-5 md:py-0 ${index > 0 ? 'border-t md:border-l md:border-t-0' : ''}`}
+          >
+            <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{pillar.label}</p>
+            <h3 className="mt-3 text-lg leading-tight text-primary">{pillar.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-gray-400">{pillar.body}</p>
+          </section>
+        ))}
+      </div>
+
+      {/* Flow: full width */}
+      <div className="mt-10 border-t border-primary/10 pt-7">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.flowLabel}</p>
+        <ol className="mt-5 grid grid-cols-1 gap-x-4 sm:grid-cols-5">
+          {caseStudy.flow.map((step, index) => (
+            <li key={step} className="flex min-h-16 items-center justify-between gap-4 border-t border-primary/10 py-3 sm:min-h-28 sm:flex-col sm:items-start sm:py-4">
+              <span className="text-[10px] text-gray-500">{String(index + 1).padStart(2, '0')}</span>
+              <span className="text-sm leading-tight text-primary">{step}</span>
+              {index < caseStudy.flow.length - 1 ? (
+                <ArrowRight className="h-4 w-4 shrink-0 text-primary/50 sm:self-end" aria-hidden="true" />
+              ) : (
+                <Check className="h-4 w-4 shrink-0 text-primary sm:self-end" aria-hidden="true" />
+              )}
+            </li>
+          ))}
+        </ol>
       </div>
     </motion.article>
   );
