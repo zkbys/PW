@@ -1271,9 +1271,9 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
           </div>
         </header>
 
-        <div className="overflow-hidden rounded-2xl bg-[#101010]">
+        <div className="flex max-h-[420px] items-center justify-center overflow-hidden rounded-2xl bg-[#101010] sm:max-h-[480px] lg:max-h-[520px]">
           <video
-            className="h-auto w-full"
+            className="h-full w-full object-contain"
             src={videoSrc}
             controls
             preload="metadata"
