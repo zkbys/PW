@@ -157,8 +157,8 @@ const copy: Record<
         },
         {
           label: '2026',
-          title: '英语习得与内容产品实验',
-          body: '围绕 Reddit、双语内容、小红书卡片和 PWA 体验，探索 AI 驱动的内容消费与学习转化。',
+          title: '智能体开发工具实践',
+          body: '用 Claude Code、CodeX 等智能体开发工具构建复杂项目，实现从想法到可运行系统的快速转化。',
         },
         {
           label: 'Now',
@@ -166,8 +166,8 @@ const copy: Record<
           body: '适合参与 AI 产品早期原型、Agent 工作流设计、内容自动化管线和创意技术系统搭建。',
         },
       ],
-      methodTitle: '我能解决什么问题',
-      methods: ['AI 想法转 Demo', 'Agent 工作流设计', '内容自动化管线'],
+      methodTitle: '工具与方法',
+      methods: ['Claude Code', 'CodeX', 'AI Agent 工作流'],
       currentFocus: {
         label: 'Currently / 最近在做',
         status: '持续迭代中',
@@ -328,8 +328,8 @@ const copy: Record<
         },
         {
           label: '2026',
-          title: 'English acquisition and content products',
-          body: 'Explored Reddit-based learning, bilingual cards, XiaoHongShu content formats, and PWA interaction patterns.',
+          title: 'Agent development tooling',
+          body: 'Using Claude Code, CodeX, and similar agent development tools to build complex projects, turning ideas into working systems quickly.',
         },
         {
           label: 'Now',
@@ -337,8 +337,8 @@ const copy: Record<
           body: 'A fit for early AI product prototypes, agent workflow design, content automation pipelines, and creative technology systems.',
         },
       ],
-      methodTitle: 'What I can solve',
-      methods: ['AI ideas to demos', 'Agent workflow design', 'Content automation pipelines'],
+      methodTitle: 'Tools & Methods',
+      methods: ['Claude Code', 'CodeX', 'AI Agent Workflows'],
       currentFocus: {
         label: 'Currently',
         status: 'In active iteration',
@@ -515,8 +515,8 @@ const copy: Record<
           body: '我更愿意拿可运行的 Demo、仓库、视频和卡片说话，用可见产物解释自己的能力。',
         },
       ],
-      methodTitle: '我能搭的系统',
-      methods: ['AI-native workflow', 'Human-in-the-loop', 'Content systems'],
+      methodTitle: '工具与方法',
+      methods: ['Claude Code', 'CodeX', 'AI Agent 工作流'],
       currentFocus: {
         label: 'Currently / 最近在做',
         status: '持续实验中',
@@ -679,8 +679,8 @@ const copy: Record<
           body: 'I prefer runnable demos, repositories, videos, and cards that make the work visible.',
         },
       ],
-      methodTitle: 'Systems I can build',
-      methods: ['AI-native workflow', 'Human-in-the-loop', 'Content systems'],
+      methodTitle: 'Tools & Methods',
+      methods: ['Claude Code', 'CodeX', 'AI Agent 工作流'],
       currentFocus: {
         label: 'Currently',
         status: 'Actively experimenting',
@@ -1153,7 +1153,7 @@ function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           </div>
         </div>
 
-        <CurrentFocus focus={activeCopy.currentFocus} />
+        {/* CurrentFocus removed per user request */}
       </div>
     </section>
   );
