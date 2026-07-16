@@ -32,6 +32,8 @@ const projectIcons = [
 
 const whiteboardDemoVideo = 'https://github.com/zkbys/whiteboard/releases/download/v0.2.0/preview.mp4';
 
+const reverseEditingDemoVideo = 'https://github.com/zkbys/reverse-editing/releases/download/v0.1.0/reverse-editing-demo.mp4';
+
 type Locale = 'zh' | 'en';
 type DemoMode = 'career' | 'creator';
 
@@ -67,7 +69,6 @@ type CaseStudyCopy = {
   pillars: Array<{ label: string; title: string; body: string }>;
   flowLabel: string;
   flow: string[];
-  repoLabel: string;
 };
 
 const modeLabels: Record<Locale, Record<DemoMode, string>> = {
@@ -112,6 +113,7 @@ const copy: Record<
       videoCard: string;
       projects: ProjectCopy[];
       caseStudy: CaseStudyCopy;
+      caseStudy02: CaseStudyCopy;
       githubLabel: string;
       demoSoon: string;
       videoSoon: string;
@@ -252,7 +254,31 @@ const copy: Record<
         ],
         flowLabel: '处理流程',
         flow: ['输入主题', '生成内容', '制作画面', '合成视频', '检查质量'],
-        repoLabel: '查看完整案例仓库',
+      },
+      caseStudy02: {
+        label: 'Featured case study / 02',
+        title: 'Reverse Editing',
+        summary: '上传一条你觉得拍得好的短视频，AI 帮你拆解它的镜头结构、文案节奏和信任逻辑，输出一套完整的制作方案——包括拍摄清单、故事板、可编辑字幕/配音脚本，以及一个剪映可打开的预演工程。',
+        videoCaption: '右侧的这条视频，就是我只输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的 17 个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
+        pillars: [
+          {
+            label: '问题',
+            title: '想做视频但不知道怎么拍',
+            body: '看了无数爆款视频，拍的时候还是不知道第一个镜头怎么摆。文案、节奏、镜头衔接全是黑盒。',
+          },
+          {
+            label: '方案',
+            title: '逆向拆解对标视频的结构',
+            body: '把对标视频喂给 AI，它自动拆解出镜头类型、时长、文案节奏和信任逻辑。每个镜头都变成可执行、可替换的模块。',
+          },
+          {
+            label: '结果',
+            title: '从"想学"到"能拍"只需要一条对标视频',
+            body: '64 秒的眼镜店视频，逆向拆解成 17 个镜头，自动生成故事板、拍摄清单、配音脚本和剪映预演工程。',
+          },
+        ],
+        flowLabel: '处理流程',
+        flow: ['输入对标视频', '逆向拆解结构', '生成故事板', '组装内容层', '导出剪映工程'],
       },
       githubLabel: '查看 GitHub',
       demoSoon: 'Demo 待补',
@@ -402,7 +428,31 @@ const copy: Record<
         ],
         flowLabel: 'How it works',
         flow: ['Topic input', 'Content generation', 'Visual creation', 'Video synthesis', 'Quality check'],
-        repoLabel: 'Explore the full case repo',
+      },
+      caseStudy02: {
+        label: 'Featured case study / 02',
+        title: 'Reverse Editing',
+        summary: 'Upload a short video you admire, and AI dissects its shot structure, copy rhythm, and trust logic—outputting a complete production plan including shot lists, storyboards, editable subtitle/voiceover scripts, and a CapCut-ready preview project.',
+        videoCaption: 'The video on the right was generated from a single reference video and store info. Every shot, caption, and transition rhythm was reverse-engineered and reassembled by AI.',
+        pillars: [
+          {
+            label: 'Problem',
+            title: 'I want to make videos but do not know how to shoot',
+            body: 'I watched tons of viral videos but still do not know how to start filming. Copy, pacing, and shot transitions are all black boxes.',
+          },
+          {
+            label: 'Solution',
+            title: 'Reverse-engineer the structure of a reference video',
+            body: 'Feed a reference video to AI, and it automatically breaks down shot types, timing, copy rhythm, and trust logic. Every shot becomes an executable, replaceable module.',
+          },
+          {
+            label: 'Result',
+            title: 'From "I want to learn" to "I can shoot" with one reference video',
+            body: 'A 64-second glasses store video reverse-engineered into 17 shots, with storyboard, shot list, voiceover script, and CapCut preview.',
+          },
+        ],
+        flowLabel: 'How it works',
+        flow: ['Reference video input', 'Reverse structure analysis', 'Storyboard generation', 'Content layer assembly', 'CapCut project export'],
       },
       githubLabel: 'View GitHub',
       demoSoon: 'Demo soon',
@@ -542,7 +592,31 @@ const copy: Record<
         ],
         flowLabel: '一条可继续创作的流水线',
         flow: ['主题', '表达与画面', '模型资产', '动作与镜头', '审查与交付'],
-        repoLabel: '打开创作系统',
+      },
+      caseStudy02: {
+        label: 'Featured case study / 02',
+        title: 'Reverse Editing',
+        summary: '上传一条你觉得拍得好的短视频，AI 帮你拆解它的镜头结构、文案节奏和信任逻辑，输出一套完整的制作方案——包括拍摄清单、故事板、可编辑字幕/配音脚本，以及一个剪映可打开的预演工程。',
+        videoCaption: '右侧的这条视频，就是我只输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的 17 个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
+        pillars: [
+          {
+            label: '问题',
+            title: '想做视频但不知道怎么拍',
+            body: '看了无数爆款视频，拍的时候还是不知道第一个镜头怎么摆。文案、节奏、镜头衔接全是黑盒。',
+          },
+          {
+            label: '方案',
+            title: '逆向拆解对标视频的结构',
+            body: '把对标视频喂给 AI，它自动拆解出镜头类型、时长、文案节奏和信任逻辑。每个镜头都变成可执行、可替换的模块。',
+          },
+          {
+            label: '结果',
+            title: '从"想学"到"能拍"只需要一条对标视频',
+            body: '64 秒的眼镜店视频，逆向拆解成 17 个镜头，自动生成故事板、拍摄清单、配音脚本和剪映预演工程。',
+          },
+        ],
+        flowLabel: '处理流程',
+        flow: ['输入对标视频', '逆向拆解结构', '生成故事板', '组装内容层', '导出剪映工程'],
       },
       githubLabel: '打开仓库',
       demoSoon: 'Demo 待补',
@@ -685,7 +759,31 @@ const copy: Record<
         ],
         flowLabel: 'A pipeline built for continued creation',
         flow: ['Topic', 'Voice & image', 'Model assets', 'Motion & camera', 'Review & delivery'],
-        repoLabel: 'Open the creative system',
+      },
+      caseStudy02: {
+        label: 'Featured case study / 02',
+        title: 'Reverse Editing',
+        summary: 'Upload a short video you admire, and AI dissects its shot structure, copy rhythm, and trust logic—outputting a complete production plan including shot lists, storyboards, editable subtitle/voiceover scripts, and a CapCut-ready preview project.',
+        videoCaption: 'The video on the right was generated from a single reference video and store info. Every shot, caption, and transition rhythm was reverse-engineered and reassembled by AI.',
+        pillars: [
+          {
+            label: 'Problem',
+            title: 'I want to make videos but do not know how to shoot',
+            body: 'I watched tons of viral videos but still do not know how to start filming. Copy, pacing, and shot transitions are all black boxes.',
+          },
+          {
+            label: 'Solution',
+            title: 'Reverse-engineer the structure of a reference video',
+            body: 'Feed a reference video to AI, and it automatically breaks down shot types, timing, copy rhythm, and trust logic. Every shot becomes an executable, replaceable module.',
+          },
+          {
+            label: 'Result',
+            title: 'From "I want to learn" to "I can shoot" with one reference video',
+            body: 'A 64-second glasses store video reverse-engineered into 17 shots, with storyboard, shot list, voiceover script, and CapCut preview.',
+          },
+        ],
+        flowLabel: 'How it works',
+        flow: ['Reference video input', 'Reverse structure analysis', 'Storyboard generation', 'Content layer assembly', 'CapCut project export'],
       },
       githubLabel: 'Open repo',
       demoSoon: 'Demo soon',
@@ -1124,7 +1222,7 @@ function ProjectCard({
   );
 }
 
-function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
+function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc: string }) {
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -1176,7 +1274,7 @@ function WhiteboardCaseStudy({ caseStudy }: { caseStudy: CaseStudyCopy }) {
         <div className="overflow-hidden rounded-2xl bg-[#101010]">
           <video
             className="h-auto w-full"
-            src={whiteboardDemoVideo}
+            src={videoSrc}
             controls
             preload="metadata"
             playsInline
@@ -1317,7 +1415,8 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           ))}
         </div>
 
-        <WhiteboardCaseStudy caseStudy={activeCopy.caseStudy} />
+        <CaseStudy caseStudy={activeCopy.caseStudy} videoSrc={whiteboardDemoVideo} />
+        <CaseStudy caseStudy={activeCopy.caseStudy02} videoSrc={reverseEditingDemoVideo} />
 
         <ContactPanel locale={locale} mode={mode} />
       </div>
