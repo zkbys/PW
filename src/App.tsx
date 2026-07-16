@@ -66,6 +66,8 @@ type CaseStudyCopy = {
   videoCaption?: string;
   socialProof?: string;
   socialLinks?: Array<{ label: string; url: string }>;
+  imageSrc?: string;
+  imageCaption?: string;
   pillars: Array<{ label: string; title: string; body: string }>;
   flowLabel: string;
   flow: string[];
@@ -260,6 +262,8 @@ const copy: Record<
         title: 'Reverse Editing',
         summary: '上传一条你觉得拍得好的短视频，AI 帮你拆解它的镜头结构、文案节奏和信任逻辑，输出一套完整的制作方案——包括拍摄清单、故事板、可编辑字幕/配音脚本，以及一个剪映可打开的预演工程。',
         videoCaption: '右侧的这条视频，就是我只输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的 17 个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
+        imageSrc: '/capcut-screenshot.png',
+        imageCaption: '逆向拆解后生成的剪映预演工程草稿',
         pillars: [
           {
             label: '问题',
@@ -434,6 +438,8 @@ const copy: Record<
         title: 'Reverse Editing',
         summary: 'Upload a short video you admire, and AI dissects its shot structure, copy rhythm, and trust logic—outputting a complete production plan including shot lists, storyboards, editable subtitle/voiceover scripts, and a CapCut-ready preview project.',
         videoCaption: 'The video on the right was generated from a single reference video and store info. Every shot, caption, and transition rhythm was reverse-engineered and reassembled by AI.',
+        imageSrc: '/capcut-screenshot.png',
+        imageCaption: 'CapCut preview project generated from reverse engineering',
         pillars: [
           {
             label: 'Problem',
@@ -598,6 +604,8 @@ const copy: Record<
         title: 'Reverse Editing',
         summary: '上传一条你觉得拍得好的短视频，AI 帮你拆解它的镜头结构、文案节奏和信任逻辑，输出一套完整的制作方案——包括拍摄清单、故事板、可编辑字幕/配音脚本，以及一个剪映可打开的预演工程。',
         videoCaption: '右侧的这条视频，就是我只输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的 17 个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
+        imageSrc: '/capcut-screenshot.png',
+        imageCaption: '逆向拆解后生成的剪映预演工程草稿',
         pillars: [
           {
             label: '问题',
@@ -765,6 +773,8 @@ const copy: Record<
         title: 'Reverse Editing',
         summary: 'Upload a short video you admire, and AI dissects its shot structure, copy rhythm, and trust logic—outputting a complete production plan including shot lists, storyboards, editable subtitle/voiceover scripts, and a CapCut-ready preview project.',
         videoCaption: 'The video on the right was generated from a single reference video and store info. Every shot, caption, and transition rhythm was reverse-engineered and reassembled by AI.',
+        imageSrc: '/capcut-screenshot.png',
+        imageCaption: 'CapCut preview project generated from reverse engineering',
         pillars: [
           {
             label: 'Problem',
@@ -1266,6 +1276,15 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
                     <ExternalLink className="h-3 w-3" />
                   </a>
                 ))}
+              </div>
+            ) : null}
+
+            {caseStudy.imageSrc ? (
+              <div className="mt-3 overflow-hidden rounded-xl border border-primary/10">
+                <img src={caseStudy.imageSrc} alt="" className="h-auto w-full" />
+                {caseStudy.imageCaption ? (
+                  <p className="bg-white/[0.03] px-4 py-2 text-xs text-primary/60">{caseStudy.imageCaption}</p>
+                ) : null}
               </div>
             ) : null}
           </div>
