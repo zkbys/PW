@@ -1357,24 +1357,17 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
         </div>
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {activeCopy.contactItems.map((item) => {
-            const href =
-              item.kind === 'github'
-                ? contactLinks.github
-                : item.kind === 'email'
-                  ? contactLinks.email
-                  : item.kind === 'phone'
-                    ? contactLinks.phone
-                    : '';
+            const href = item.kind === 'github' ? contactLinks.github : '';
             const contentNode = (
               <>
-                <span className="text-primary/80 transition-colors duration-300 group-hover:text-black">
+                <span className={`text-primary/80 ${href ? 'transition-colors duration-300 group-hover:text-black' : ''}`}>
                   <ContactIcon kind={item.kind} />
                 </span>
                 <span>
-                  <span className="block text-[10px] uppercase tracking-[0.22em] text-gray-500 transition-colors duration-300 group-hover:text-black/60">
+                  <span className={`block text-[10px] uppercase tracking-[0.22em] text-gray-500 ${href ? 'transition-colors duration-300 group-hover:text-black/60' : ''}`}>
                     {item.label}
                   </span>
-                  <span className="mt-1 block text-sm leading-tight text-primary transition-colors duration-300 group-hover:text-black">
+                  <span className={`mt-1 block text-sm leading-tight text-primary break-words ${href ? 'transition-colors duration-300 group-hover:text-black' : ''}`}>
                     {item.value}
                   </span>
                 </span>
