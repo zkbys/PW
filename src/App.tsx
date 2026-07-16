@@ -1246,7 +1246,7 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
     >
       {/* Header + Video: side by side */}
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-        <header className="flex flex-col">
+        <header className="flex h-full flex-col">
           <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{caseStudy.label}</p>
           <h2 className="mt-4 text-4xl leading-[0.9] text-primary sm:text-5xl">{caseStudy.title}</h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base">{caseStudy.summary}</p>
@@ -1290,7 +1290,7 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
           </div>
         </header>
 
-        <div className="flex max-h-[420px] items-center justify-center overflow-hidden rounded-2xl bg-[#101010] sm:max-h-[480px] lg:max-h-[520px]">
+        <div className="flex h-full max-h-[420px] items-center justify-center overflow-hidden rounded-2xl bg-[#101010] sm:max-h-[480px] lg:max-h-[520px]">
           <video
             className="h-full w-full object-contain"
             src={videoSrc}
