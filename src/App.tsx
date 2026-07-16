@@ -32,7 +32,7 @@ const projectIcons = [
 
 const whiteboardDemoVideo = 'https://github.com/zkbys/whiteboard/releases/download/v0.2.0/preview.mp4';
 
-const reverseEditingDemoVideo = 'https://github.com/zkbys/reverse-editing/releases/download/v0.1.0/reverse-editing-demo.mp4';
+const reverseEditingDemoVideo = 'https://github.com/zkbys/reverse-editing/releases/download/v0.1.0/xiaopipi_glasses_internal_previs_20260710.mp4';
 
 type Locale = 'zh' | 'en';
 type DemoMode = 'career' | 'creator';
