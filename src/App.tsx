@@ -1281,7 +1281,7 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
 
             {caseStudy.imageSrc ? (
               <div className="mt-3 overflow-hidden rounded-xl border border-primary/10">
-                <img src={caseStudy.imageSrc} alt="" className="h-auto w-full" />
+                <img src={caseStudy.imageSrc} alt="" className="h-auto max-h-[240px] w-full object-contain" />
                 {caseStudy.imageCaption ? (
                   <p className="bg-white/[0.03] px-4 py-2 text-xs text-primary/60">{caseStudy.imageCaption}</p>
                 ) : null}
