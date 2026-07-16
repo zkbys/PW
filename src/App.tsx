@@ -148,12 +148,12 @@ const copy: Record<
       ],
       aboutBody:
         '我喜欢做介于产品、工程和创作之间的东西。对我来说，AI 不只是聊天工具，而是一套新的生产方式：它可以参与需求拆解、信息组织、内容生成、流程自动化、界面原型和质量检查。这个作品集会持续记录这些实验如何从想法变成真实系统。',
-      timelineTitle: '代表性经历时间线',
+      timelineTitle: '',
       timeline: [
         {
           label: '2026',
-          title: 'AI 白板视频流水线',
-          body: '把脚本、分镜、素材、音频、镜头、渲染和 QA 拆成可审核模块，强调人机协同和验收标准。',
+          title: 'AI 辅助快速原型',
+          body: '用 Claude Code、CodeX 等工具把模糊想法快速变成可运行 Demo，缩短从概念到验证的周期。',
         },
         {
           label: '2026',
@@ -162,8 +162,8 @@ const copy: Record<
         },
         {
           label: 'Now',
-          title: '能解决的问题',
-          body: '适合参与 AI 产品早期原型、Agent 工作流设计、内容自动化管线和创意技术系统搭建。',
+          title: '人机协作与质量验收',
+          body: '在 AI 自动化流程中保留人工审核节点，定义明确的验收标准，确保交付物可用、可迭代。',
         },
       ],
       methodTitle: '工具与方法',
@@ -319,12 +319,12 @@ const copy: Record<
       ],
       aboutBody:
         'I build at the intersection of product, engineering, and creation. To me, AI is not just a chat interface, but a new production layer for framing problems, organizing information, generating content, automating workflows, prototyping interfaces, and checking quality.',
-      timelineTitle: 'Representative timeline',
+      timelineTitle: '',
       timeline: [
         {
           label: '2026',
-          title: 'AI whiteboard video pipeline',
-          body: 'Separated script, planning, assets, audio, camera, rendering, and QA into reviewable modules with clear acceptance gates.',
+          title: 'AI-assisted rapid prototyping',
+          body: 'Using Claude Code, CodeX, and similar tools to turn vague ideas into runnable demos quickly, shortening the cycle from concept to validation.',
         },
         {
           label: '2026',
@@ -333,8 +333,8 @@ const copy: Record<
         },
         {
           label: 'Now',
-          title: 'Problems I can help with',
-          body: 'A fit for early AI product prototypes, agent workflow design, content automation pipelines, and creative technology systems.',
+          title: 'Human-AI collaboration & quality assurance',
+          body: 'Keeping human review nodes in AI automation pipelines, defining clear acceptance criteria to ensure deliverables are usable and iterable.',
         },
       ],
       methodTitle: 'Tools & Methods',
@@ -1128,8 +1128,10 @@ function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
         <div id="timeline" className="mt-12 border-t border-primary/10 pt-8 text-left">
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{activeCopy.timelineTitle}</p>
-              <h2 className="mt-3 max-w-sm text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.methodTitle}</h2>
+              {activeCopy.timelineTitle ? (
+                <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{activeCopy.timelineTitle}</p>
+              ) : null}
+              <h2 className="max-w-sm text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.methodTitle}</h2>
               <div className="mt-6 flex flex-wrap gap-2">
                 {activeCopy.methods.map((method) => (
                   <span key={method} className="rounded-full border border-primary/15 px-3 py-1 text-xs text-primary/80">
