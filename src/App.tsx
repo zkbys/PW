@@ -1128,7 +1128,19 @@ function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
         />
         <ScrollRevealParagraph text={activeCopy.aboutBody} />
 
-        <div id="timeline" className="mt-12 border-t border-primary/10 pt-8 text-left">
+        {/* CurrentFocus removed per user request */}
+      </div>
+    </section>
+  );
+}
+
+function Timeline({ locale, mode }: { locale: Locale; mode: DemoMode }) {
+  const activeCopy = copy[mode][locale];
+
+  return (
+    <section id="timeline" className="bg-black px-4 py-20 sm:px-6 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-6xl rounded-[1.5rem] bg-[#101010] px-5 py-16 sm:px-8 sm:py-20 md:rounded-[2rem] md:px-10 lg:py-24">
+        <div className="text-left">
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
             <div>
               {activeCopy.timelineTitle ? (
@@ -1159,8 +1171,6 @@ function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
             </div>
           </div>
         </div>
-
-        {/* CurrentFocus removed per user request */}
       </div>
     </section>
   );
@@ -1437,8 +1447,6 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
 
         <CaseStudy caseStudy={activeCopy.caseStudy} videoSrc={whiteboardDemoVideo} posterSrc={whiteboardPoster} />
         <CaseStudy caseStudy={activeCopy.caseStudy02} videoSrc={reverseEditingDemoVideo} posterSrc={reverseEditingPoster} />
-
-        <ContactPanel locale={locale} mode={mode} />
       </div>
     </section>
   );
@@ -1482,6 +1490,8 @@ export default function App() {
       <Hero locale={locale} mode={mode} setLocale={setLocale} />
       <About locale={locale} mode={mode} />
       <Features locale={locale} mode={mode} />
+      <Timeline locale={locale} mode={mode} />
+      <ContactPanel locale={locale} mode={mode} />
       <BackToTop />
     </main>
   );
