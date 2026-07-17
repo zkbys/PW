@@ -141,7 +141,7 @@ const copy: Record<
         '我是 ZKbys，一个 AI 产品与 Agent 工作流构建者。我擅长把模糊想法拆解成可运行 Demo、可复用流程和可展示作品，关注 AI 如何真正进入产品、内容和创作生产。',
       heroStatus: '正在寻找 AI 产品 / Agent 工作流 / 创意技术相关机会。',
       primaryCta: '联系我',
-      resumeCta: '简历待补',
+      resumeCta: '查看简历',
       githubCta: 'GitHub',
       aboutLabel: 'AI portfolio',
       aboutHeading: [
@@ -297,7 +297,7 @@ const copy: Record<
         { label: '微信', value: '_ZKbys_', kind: 'wechat' },
         { label: '电话', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
-        { label: '简历', value: 'PDF 待补', kind: 'resume' },
+        { label: '简历', value: '查看简历', kind: 'resume' },
       ],
     },
     en: {
@@ -312,7 +312,7 @@ const copy: Record<
         'I am ZKbys, an AI product and agent workflow builder. I turn early ideas into runnable demos, reusable workflows, and visible artifacts across product, content, and creative systems.',
       heroStatus: '正在寻找 AI 产品 / Agent 工作流 / 创意技术相关机会。',
       primaryCta: 'Contact me',
-      resumeCta: 'Resume soon',
+      resumeCta: 'View Resume',
       githubCta: 'GitHub',
       aboutLabel: 'AI portfolio',
       aboutHeading: [
@@ -473,7 +473,7 @@ const copy: Record<
         { label: 'WeChat', value: '_ZKbys_', kind: 'wechat' },
         { label: 'Phone', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
-        { label: 'Resume', value: 'PDF pending', kind: 'resume' },
+        { label: 'Resume', value: 'View Resume', kind: 'resume' },
       ],
     },
   },
@@ -490,7 +490,7 @@ const copy: Record<
         '我把 AI 当成新的创作基础设施：从一句想法，到脚本、工具、自动化流程、内容系统和可展示作品。我的兴趣是让 AI 不只停留在对话里，而是进入真实的创作和生产。',
       heroStatus: 'Building AI-native tools, workflows and content systems.',
       primaryCta: '聊聊合作',
-      resumeCta: '简历待补',
+      resumeCta: '查看简历',
       githubCta: 'GitHub',
       aboutLabel: 'creative systems',
       aboutHeading: [
@@ -639,7 +639,7 @@ const copy: Record<
         { label: '微信', value: '_ZKbys_', kind: 'wechat' },
         { label: '电话', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
-        { label: '简历', value: 'PDF 待补', kind: 'resume' },
+        { label: '简历', value: '查看简历', kind: 'resume' },
       ],
     },
     en: {
@@ -654,7 +654,7 @@ const copy: Record<
         'I treat AI as creative infrastructure: from a single idea to scripts, tools, automated workflows, content systems, and visible artifacts. My focus is moving AI beyond conversation into real creative and production work.',
       heroStatus: 'Building AI-native tools, workflows and content systems.',
       primaryCta: 'Start a conversation',
-      resumeCta: 'Resume soon',
+      resumeCta: 'View Resume',
       githubCta: 'GitHub',
       aboutLabel: 'creative systems',
       aboutHeading: [
@@ -808,7 +808,7 @@ const copy: Record<
         { label: 'WeChat', value: '_ZKbys_', kind: 'wechat' },
         { label: 'Phone', value: '17857294938', kind: 'phone' },
         { label: 'GitHub', value: 'github.com/zkbys', kind: 'github' },
-        { label: 'Resume', value: 'PDF pending', kind: 'resume' },
+        { label: 'Resume', value: 'View Resume', kind: 'resume' },
       ],
     },
   },
@@ -1069,7 +1069,7 @@ function Hero({
                   </span>
                 </a>
                 <a
-                  href="#contact"
+                  href="/resume/resume-cn.pdf"
                   className="inline-flex h-10 items-center gap-2 rounded-full border border-primary/20 bg-black/35 px-4 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black sm:h-11 sm:text-sm"
                 >
                   <Download className="h-4 w-4" />
@@ -1401,7 +1401,10 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
         </div>
         <div className="flex flex-wrap gap-2">
           {activeCopy.contactItems.map((item) => {
-            const href = item.kind === 'github' ? contactLinks.github : '';
+            const href =
+              item.kind === 'github' ? contactLinks.github :
+              item.kind === 'resume' ? '/resume/resume-cn.pdf' :
+              '';
             const contentNode = (
               <>
                 <span className={`text-primary/80 ${href ? 'transition-colors duration-300 group-hover:text-black' : ''}`}>

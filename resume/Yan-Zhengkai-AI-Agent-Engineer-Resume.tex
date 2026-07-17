@@ -1,0 +1,187 @@
+% Yan Zhengkai — AI Agent Engineer Resume (English version)
+% Layout based on Jake's Resume (github.com/jakegut/resume): single column,
+% ATS-friendly, compact, ruled section titles, standard bullets.
+% Compile on Overleaf with XeLaTeX. Up to 2 pages.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+% pdfTeX-only glyph mapping for ATS text extraction; skipped under XeLaTeX
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting: small-caps title with a horizontal rule underneath
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands (Jake's Resume)
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Two-line project heading for long titles:
+% line 1 = bold title (left) + date (right); line 2 = italic meta (role, links)
+\newcommand{\resumeProjectHeading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\small #1} & \small #2 \\
+      \textit{\small #3} & \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Yan Zhengkai} \\ \vspace{2pt}
+    \small AI Agent Engineer (Remote) \\ \vspace{2pt}
+    \small +86 178-5729-4938 $|$
+    \href{mailto:zhengkaibys@163.com}{\underline{zhengkaibys@163.com}} $|$
+    \href{https://github.com/zkbys}{\underline{github.com/zkbys}} $|$
+    Portfolio: \href{https://github.com/zkbys/PW}{\underline{github.com/zkbys/PW}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Hangzhou Dianzi University}{Incoming, Sep 2026}
+      {M.Eng. in Computer Technology}{}
+    \resumeSubheading
+      {NingboTech University}{Sep 2022 -- Jun 2026}
+      {B.Eng. in Computer Science and Technology}{}
+      \resumeItemListStart
+        \resumeItem{GPA: 4.09/5.0 (Top 5\% of major), multi-year scholarship recipient}
+        \resumeItem{Core Coursework: Artificial Intelligence, Machine Learning, Deep Learning, Data Structures \& Algorithms}
+        \resumeItem{Research: covert multimodal backdoor attack research at NBT-AILAB; first-author paper submitted to ICME 2026 (CCF-B), with positive reviewer feedback (scores 5/4/3/3/2)}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----PROJECT-BASED COLLABORATION-----
+\section{Project-based Collaboration}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Wanliuliang Culture Media Co., Ltd.}{Remote}
+      {AI Workflow Engineer (Project-based Contractor)}{Jul 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Partnered with the company on a project basis as an independent developer, designing and building AI agent workflows end-to-end for short-video content production; delivered two production-grade agent pipelines (Whiteboard Pipeline / Reverse Editing)}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------FEATURED PROJECTS-----------
+\section{Featured Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {Whiteboard Pipeline --- AI Whiteboard Infographic Video Pipeline}{Jul 2026}
+      {Solo Developer $|$ \href{https://github.com/zkbys/whiteboard}{\underline{github.com/zkbys/whiteboard}} (13 stars on GitHub)}{}
+      \resumeItemListStart
+        \resumeItem{End-to-end agent pipeline that turns a single topic into a 30--60s whiteboard explainer video, covering the full chain: script beats $\rightarrow$ infographic planning $\rightarrow$ model image generation $\rightarrow$ auto-calibration $\rightarrow$ animation control $\rightarrow$ voiceover/subtitles $\rightarrow$ QA acceptance}
+        \resumeItem{\textbf{Agent Skill Engineering:} packaged the entire pipeline as an Agent Skill installable in one command by Claude Code / Codex, with install scripts and a doctor environment self-check tool, enabling agent-driven multi-stage orchestration}
+        \resumeItem{\textbf{Multi-backend Auto-calibration:} designed a four-level fallback calibration chain (Claude vision model $\rightarrow$ OpenAI-compatible VLM $\rightarrow$ local EasyOCR $\rightarrow$ deterministic mock) that detects the real positions of elements in generated images, fixing layout drift between model output and templates}
+        \resumeItem{\textbf{Deterministic Delivery \& Acceptance:} local FFmpeg rendering with a validator script producing an integration report, making every run reproducible and verifiable}
+        \resumeItem{\textbf{Stack:} Python, Node.js, FFmpeg, edge-tts, HyperFrames, OpenAI API, EasyOCR}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {Reverse Editing --- Reverse Video Deconstruction \& Content Assetization}{Jul 2026}
+      {Solo Developer $|$ \href{https://github.com/zkbys/reverse-editing}{\underline{github.com/zkbys/reverse-editing}}}{}
+      \resumeItemListStart
+        \resumeItem{Workflow that reverse-engineers benchmark short videos into an executable, editable, re-shootable production package: shot-deconstruction report, storyboard, shot list, word-level script/voiceover files, an openable Jianying (CapCut China) draft, and an internal preview MP4}
+        \resumeItem{\textbf{Six-stage Pipeline:} AI shot-structure analysis $\rightarrow$ storyboard \& shooting guidance $\rightarrow$ word-level timestamped script layer (VTT/SRT subtitles) $\rightarrow$ Tesseract OCR frame QC $\rightarrow$ scripted Jianying project assembly $\rightarrow$ deterministic FFmpeg preview rendering}
+        \resumeItem{\textbf{Local-first Architecture:} FFmpeg/ffprobe + Tesseract OCR run locally by default; AI video-generation and TTS APIs are opt-in extensions disabled by default, balancing cost and controllability}
+        \resumeItem{\textbf{Stack:} Python, FFmpeg, Tesseract OCR, jsonschema, Pillow, Jianying Pro scripting}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------ADDITIONAL PROJECTS-----------
+\section{Additional Projects}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Scrollish} --- dopamine-driven English-acquisition PWA (Co-Lead, team of 3; live at \href{https://keyai.uno/scrollish}{\underline{keyai.uno/scrollish}}): infinite scroll + immersive translation + AI contextual explanations, full-cycle Vibe Coding delivery with Qwen-powered voice cloning and adaptive leveling
+    }}
+    \small{\item{
+     \textbf{Covert Multimodal Backdoor Attacks on Medical Vision-Language Models} --- First Author (NBT-AILAB, Jun 2024 -- Sep 2025): PyTorch/MedCLIP federated-learning backdoor attack, 98\% ASR and 0.998 SSIM; paper submitted to ICME 2026 (CCF-B, review scores 5/4/3/3/2)
+    }}
+    \small{\item{
+     \textbf{Multimodal Intelligent Diagnosis System for Laryngeal Diseases} --- Technical Lead (with Ningbo Lihuili Hospital, Apr -- Nov 2024): ResNet-50 + wav2vec 2.0 multimodal 4-class classifier, 80.75\% diagnostic accuracy
+    }}
+    \small{\item{
+     \textbf{PW} --- personal portfolio site (React + Vite + TypeScript + Tailwind) $|$ \href{https://github.com/zkbys/PW}{\underline{github.com/zkbys/PW}}
+    }}
+ \end{itemize}
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, Java, C/C++} \\
+     \textbf{AI Agent \& AI Coding Tools}{: agent workflow design, Agent Skill development (Claude Code / Codex), prompt engineering, multi-stage pipeline orchestration; proficient with Cursor, Antigravity and other AI-assisted coding tools} \\
+     \textbf{Deep Learning}{: PyTorch (proficient), TensorFlow (familiar); Transformer architecture, model tuning, multimodal fusion} \\
+     \textbf{End-to-End AI Development}{: full-cycle AI-assisted product delivery --- UI design, front/back-end code generation, database setup, deployment and operations --- able to independently ship complete applications} \\
+     \textbf{Developer Tools}{: Git/GitHub, Linux, Jupyter Notebook, OpenCV, Conda, FFmpeg}
+    }}
+ \end{itemize}
+
+%-----------HONORS-----------
+\section{Honors}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     National Encouragement Scholarship $\cdot$ Zhejiang Provincial Government Scholarship $\cdot$ First-Class University Scholarship $\cdot$ Outstanding Student Leader
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
