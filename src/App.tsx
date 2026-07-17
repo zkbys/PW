@@ -1359,7 +1359,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           <h2 className="mt-3 text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.contactTitle}</h2>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-400">{activeCopy.contactBody}</p>
         </div>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="flex flex-wrap gap-2">
           {activeCopy.contactItems.map((item) => {
             const href = item.kind === 'github' ? contactLinks.github : '';
             const contentNode = (
@@ -1385,7 +1385,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
                   href={href}
                   target={item.kind === 'github' ? '_blank' : undefined}
                   rel={item.kind === 'github' ? 'noreferrer' : undefined}
-                  className="group flex min-h-20 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3 transition-colors duration-300 hover:bg-primary hover:text-black"
+                  className="group flex min-h-20 flex-shrink-0 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3 transition-colors duration-300 hover:bg-primary hover:text-black"
                 >
                   {contentNode}
                 </a>
@@ -1393,7 +1393,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
             }
 
             return (
-              <div key={item.kind} className="flex min-h-20 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3">
+              <div key={item.kind} className="flex min-h-20 flex-shrink-0 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3">
                 {contentNode}
               </div>
             );
