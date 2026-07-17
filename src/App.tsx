@@ -31,9 +31,11 @@ const projectIcons = [
   'https://placehold.co/200x200/E1E0CC/1a1a1a?text=MS',
 ];
 
-const whiteboardDemoVideo = 'https://github.com/zkbys/whiteboard/releases/download/v0.2.0/preview.mp4';
+const whiteboardDemoVideo = '/videos/whiteboard-demo.mp4';
+const whiteboardPoster = '/images/whiteboard-poster.jpg';
 
-const reverseEditingDemoVideo = 'https://github.com/zkbys/reverse-editing/releases/download/v0.1.0/xiaopipi_glasses_internal_previs_20260710.mp4';
+const reverseEditingDemoVideo = '/videos/reverse-editing-demo.mp4';
+const reverseEditingPoster = '/images/reverse-editing-poster.jpg';
 
 type Locale = 'zh' | 'en';
 type DemoMode = 'career' | 'creator';
@@ -1237,7 +1239,7 @@ function ProjectCard({
   );
 }
 
-function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc: string }) {
+function CaseStudy({ caseStudy, videoSrc, posterSrc }: { caseStudy: CaseStudyCopy; videoSrc: string; posterSrc?: string }) {
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -1299,8 +1301,9 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
           <video
             className="h-full w-full object-contain"
             src={videoSrc}
+            poster={posterSrc}
             controls
-            preload="metadata"
+            preload="none"
             playsInline
           />
         </div>
@@ -1432,8 +1435,8 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           ))}
         </div>
 
-        <CaseStudy caseStudy={activeCopy.caseStudy} videoSrc={whiteboardDemoVideo} />
-        <CaseStudy caseStudy={activeCopy.caseStudy02} videoSrc={reverseEditingDemoVideo} />
+        <CaseStudy caseStudy={activeCopy.caseStudy} videoSrc={whiteboardDemoVideo} posterSrc={whiteboardPoster} />
+        <CaseStudy caseStudy={activeCopy.caseStudy02} videoSrc={reverseEditingDemoVideo} posterSrc={reverseEditingPoster} />
 
         <ContactPanel locale={locale} mode={mode} />
       </div>
