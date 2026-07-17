@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  ArrowUp,
   Check,
   Download,
   ExternalLink,
@@ -9,8 +10,8 @@ import {
   MessageCircle,
   Phone,
 } from 'lucide-react';
-import { motion, useInView, useScroll, useTransform, type MotionValue } from 'framer-motion';
-import { useMemo, useRef, useState, type CSSProperties } from 'react';
+import { AnimatePresence, motion, useInView, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 
 const cream = '#E1E0CC';
 const easeOut = [0.16, 1, 0.3, 1] as const;
@@ -1203,7 +1204,7 @@ function ProjectCard({
       transition={{ duration: 0.8, delay: (index + 1) * 0.15, ease: cardEase }}
     >
       <div>
-        <img src={project.icon} alt="" className="mb-6 h-10 w-10 rounded object-cover sm:h-12 sm:w-12" />
+        <img src={project.icon} alt={`${project.title} icon`} className="mb-6 h-10 w-10 rounded object-cover sm:h-12 sm:w-12" />
         <div className="mb-5 flex items-start justify-between gap-4">
           <div>
             <p className="mb-2 text-[10px] uppercase tracking-[0.24em] text-gray-500">{project.eyebrow}</p>
@@ -1285,7 +1286,7 @@ function CaseStudy({ caseStudy, videoSrc }: { caseStudy: CaseStudyCopy; videoSrc
 
             {caseStudy.imageSrc ? (
               <div className="mt-3 overflow-hidden rounded-xl border border-primary/10">
-                <img src={caseStudy.imageSrc} alt="" className="h-auto max-h-[240px] w-full object-contain" />
+                <img src={caseStudy.imageSrc} alt={caseStudy.imageCaption || caseStudy.title} className="h-auto max-h-[240px] w-full object-contain" />
                 {caseStudy.imageCaption ? (
                   <p className="bg-white/[0.03] px-4 py-2 text-xs text-primary/60">{caseStudy.imageCaption}</p>
                 ) : null}
@@ -1440,6 +1441,35 @@ function Features({ locale, mode }: { locale: Locale; mode: DemoMode }) {
   );
 }
 
+
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.3, ease: cardEase }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-black/80 text-primary backdrop-blur-sm transition-colors duration-300 hover:border-primary/40 hover:bg-primary/10"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="h-5 w-5" strokeWidth={1.5} />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function App() {
   const [locale, setLocale] = useState<Locale>('zh');
   const mode: DemoMode = 'career';
@@ -1449,6 +1479,7 @@ export default function App() {
       <Hero locale={locale} mode={mode} setLocale={setLocale} />
       <About locale={locale} mode={mode} />
       <Features locale={locale} mode={mode} />
+      <BackToTop />
     </main>
   );
 }
