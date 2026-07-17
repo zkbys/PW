@@ -1287,10 +1287,10 @@ function CaseStudy({ caseStudy, videoSrc, posterSrc }: { caseStudy: CaseStudyCop
             ) : null}
 
             {caseStudy.imageSrc ? (
-              <div className="mt-3 overflow-hidden rounded-xl border border-primary/10">
+              <div className="mt-3 max-w-xl mx-auto overflow-hidden rounded-xl border border-primary/10 text-center">
                 <img src={caseStudy.imageSrc} alt={caseStudy.imageCaption || caseStudy.title} className="h-auto max-h-[240px] w-full object-contain" />
                 {caseStudy.imageCaption ? (
-                  <p className="bg-white/[0.03] px-4 py-2 text-xs text-primary/60">{caseStudy.imageCaption}</p>
+                  <p className="bg-white/[0.03] px-4 py-2 text-center text-xs text-primary/60">{caseStudy.imageCaption}</p>
                 ) : null}
               </div>
             ) : null}
