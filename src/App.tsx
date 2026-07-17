@@ -181,7 +181,7 @@ const copy: Record<
         { text: '以项目证明能力，', className: 'text-primary' },
         { text: '以流程展示可交付性。', className: 'text-gray-500' },
       ],
-      videoCard: 'Portfolio first. Built for serious hiring conversations.',
+      videoCard: 'From prompt to product. With AI agents.',
       projects: [
         {
           number: '01',
@@ -352,7 +352,7 @@ const copy: Record<
         { text: 'Project proof for AI work.', className: 'text-primary' },
         { text: 'Readable systems, reviewable outcomes.', className: 'text-gray-500' },
       ],
-      videoCard: 'Portfolio first. Built for serious hiring conversations.',
+      videoCard: 'From prompt to product. With AI agents.',
       projects: [
         {
           number: '01',
