@@ -1138,41 +1138,37 @@ function Timeline({ locale, mode }: { locale: Locale; mode: DemoMode }) {
   const activeCopy = copy[mode][locale];
 
   return (
-    <section id="timeline" className="bg-black px-4 py-20 sm:px-6 sm:py-24 md:py-32">
-      <div className="mx-auto max-w-6xl rounded-[1.5rem] bg-[#101010] px-5 py-16 sm:px-8 sm:py-20 md:rounded-[2rem] md:px-10 lg:py-24">
-        <div className="text-left">
-          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
-            <div>
-              {activeCopy.timelineTitle ? (
-                <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{activeCopy.timelineTitle}</p>
-              ) : null}
-              <h2 className="max-w-sm text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.methodTitle}</h2>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {activeCopy.methods.map((method) => (
-                  <span key={method} className="rounded-full border border-primary/15 px-3 py-1 text-xs text-primary/80">
-                    {method}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="grid gap-0 md:grid-cols-3">
-              {activeCopy.timeline.map((item, index) => (
-                <div
-                  key={`${item.label}-${item.title}`}
-                  className={`border-primary/10 py-5 md:px-5 md:py-0 ${index > 0 ? 'border-t md:border-l md:border-t-0' : ''}`}
-                >
-                  {item.label ? (
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{item.label}</p>
-                  ) : null}
-                  <h3 className={`text-lg leading-tight text-primary ${item.label ? 'mt-3' : ''}`}>{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-400">{item.body}</p>
-                </div>
-              ))}
-            </div>
+    <div id="timeline" className="mt-4 rounded-2xl bg-[#101010] p-5 sm:p-6 md:p-8">
+      <div className="grid gap-7 lg:grid-cols-[0.9fr_1.6fr] lg:items-end">
+        <div>
+          {activeCopy.timelineTitle ? (
+            <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{activeCopy.timelineTitle}</p>
+          ) : null}
+          <h2 className="mt-3 text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.methodTitle}</h2>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {activeCopy.methods.map((method) => (
+              <span key={method} className="rounded-full border border-primary/15 px-3 py-1 text-xs text-primary/80">
+                {method}
+              </span>
+            ))}
           </div>
         </div>
+        <div className="grid gap-0 md:grid-cols-3">
+          {activeCopy.timeline.map((item, index) => (
+            <div
+              key={`${item.label}-${item.title}`}
+              className={`border-primary/10 py-5 md:px-5 md:py-0 ${index > 0 ? 'border-t md:border-l md:border-t-0' : ''}`}
+            >
+              {item.label ? (
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{item.label}</p>
+              ) : null}
+              <h3 className={`text-lg leading-tight text-primary ${item.label ? 'mt-3' : ''}`}>{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-400">{item.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 
