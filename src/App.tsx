@@ -130,13 +130,13 @@ const copy: Record<
       nav: [
         { label: '关于', href: '#about' },
         { label: '作品', href: '#portfolio' },
-        { label: '经历', href: '#timeline' },
+        { label: '方法', href: '#timeline' },
         { label: '联系', href: '#contact' },
       ],
       heroKicker: 'AI Creator / Product Builder / Agent Workflow Designer',
       heroIntro:
         '我是 ZKbys，一个 AI 产品与 Agent 工作流构建者。我擅长把模糊想法拆解成可运行 Demo、可复用流程和可展示作品，关注 AI 如何真正进入产品、内容和创作生产。',
-      heroStatus: 'Open to AI product, agent workflow and creative technology opportunities.',
+      heroStatus: '正在寻找 AI 产品 / Agent 工作流 / 创意技术相关机会。',
       primaryCta: '联系我',
       resumeCta: '简历待补',
       githubCta: 'GitHub',
@@ -307,7 +307,7 @@ const copy: Record<
       heroKicker: 'AI Creator / Product Builder / Agent Workflow Designer',
       heroIntro:
         'I am ZKbys, an AI product and agent workflow builder. I turn early ideas into runnable demos, reusable workflows, and visible artifacts across product, content, and creative systems.',
-      heroStatus: 'Open to AI product, agent workflow and creative technology opportunities.',
+      heroStatus: '正在寻找 AI 产品 / Agent 工作流 / 创意技术相关机会。',
       primaryCta: 'Contact me',
       resumeCta: 'Resume soon',
       githubCta: 'GitHub',
@@ -1359,7 +1359,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           <h2 className="mt-3 text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.contactTitle}</h2>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-400">{activeCopy.contactBody}</p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {activeCopy.contactItems.map((item) => {
             const href = item.kind === 'github' ? contactLinks.github : '';
             const contentNode = (
@@ -1385,7 +1385,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
                   href={href}
                   target={item.kind === 'github' ? '_blank' : undefined}
                   rel={item.kind === 'github' ? 'noreferrer' : undefined}
-                  className="group flex min-h-20 flex-shrink-0 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3 transition-colors duration-300 hover:bg-primary hover:text-black"
+                  className="group flex min-h-20 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3 transition-colors duration-300 hover:bg-primary hover:text-black"
                 >
                   {contentNode}
                 </a>
@@ -1393,7 +1393,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
             }
 
             return (
-              <div key={item.kind} className="flex min-h-20 flex-shrink-0 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3">
+              <div key={item.kind} className="flex min-h-20 items-center gap-3 rounded-xl border border-primary/10 px-4 py-3">
                 {contentNode}
               </div>
             );
