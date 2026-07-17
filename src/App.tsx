@@ -206,7 +206,7 @@ const copy: Record<
           title: 'PW.',
           eyebrow: 'Personal portfolio / frontend system',
           description: '你现在看到的个人网站，基于 React + Vite + Tailwind CSS + Framer Motion，作为 AI 产品能力的活简历。',
-          items: ['组件化视觉系统', 'A/B 与中英文切换', '响应式与动效'],
+          items: ['组件化视觉系统', '中英文切换', '响应式与动效'],
           repo: 'https://github.com/zkbys/PW',
           icon: projectIcons[3],
         },
@@ -264,7 +264,7 @@ const copy: Record<
         label: 'Featured case study / 02',
         title: 'Reverse Editing',
         summary: '上传一条你觉得拍得好的短视频，AI 帮你拆解它的镜头结构、文案节奏和信任逻辑，输出一套完整的制作方案——包括拍摄清单、故事板、可编辑字幕/配音脚本，以及一个剪映可打开的预演工程。',
-        videoCaption: '右侧的这条视频，就是我只输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的 17 个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
+        videoCaption: '右侧的这条视频，就是我输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的每个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
         imageSrc: '/capcut-screenshot.png',
         imageCaption: '逆向拆解后生成的剪映预演工程草稿',
         pillars: [
@@ -606,7 +606,7 @@ const copy: Record<
         label: 'Featured case study / 02',
         title: 'Reverse Editing',
         summary: '上传一条你觉得拍得好的短视频，AI 帮你拆解它的镜头结构、文案节奏和信任逻辑，输出一套完整的制作方案——包括拍摄清单、故事板、可编辑字幕/配音脚本，以及一个剪映可打开的预演工程。',
-        videoCaption: '右侧的这条视频，就是我只输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的 17 个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
+        videoCaption: '右侧的这条视频，就是我输入了一条眼镜店对标视频和门店信息后，AI 自动生成的制作方案预览。你看到的每个镜头、每段文案、每个转场节奏，都是 AI 逆向拆解并重新组装的结果。',
         imageSrc: '/capcut-screenshot.png',
         imageCaption: '逆向拆解后生成的剪映预演工程草稿',
         pillars: [
@@ -722,7 +722,7 @@ const copy: Record<
           eyebrow: 'Personal site as a design system',
           description:
             'This portfolio itself is a work: a bilingual, dual-mode presentation system that switches between career and creator versions.',
-          items: ['Bilingual and dual-mode switching', 'Component-based page system', 'Design as code'],
+          items: ['Component-based visual system', 'Bilingual switching', 'Responsive and motion design'],
           repo: 'https://github.com/zkbys/PW',
           icon: projectIcons[3],
         },
@@ -1144,6 +1144,7 @@ function Timeline({ locale, mode }: { locale: Locale; mode: DemoMode }) {
           {activeCopy.timelineTitle ? (
             <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">{activeCopy.timelineTitle}</p>
           ) : null}
+          <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60 sm:text-xs">tools &amp; methods</p>
           <h2 className="mt-3 text-2xl leading-none text-primary sm:text-3xl md:text-4xl">{activeCopy.methodTitle}</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {activeCopy.methods.map((method) => (
