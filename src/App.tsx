@@ -1248,6 +1248,16 @@ function ProjectCard({
 function CaseStudy({ caseStudy, videoSrc, posterSrc }: { caseStudy: CaseStudyCopy; videoSrc: string; posterSrc?: string }) {
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxOpen(false);
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxOpen]);
 
   return (
     <motion.article
@@ -1294,10 +1304,29 @@ function CaseStudy({ caseStudy, videoSrc, posterSrc }: { caseStudy: CaseStudyCop
 
             {caseStudy.imageSrc ? (
               <div className="mt-3 max-w-xl overflow-hidden rounded-xl border border-primary/10">
-                <img src={caseStudy.imageSrc} alt={caseStudy.imageCaption || caseStudy.title} className="h-auto max-h-[240px] w-full object-contain" />
+                <img
+                  src={caseStudy.imageSrc}
+                  alt={caseStudy.imageCaption || caseStudy.title}
+                  className="h-auto max-h-[240px] w-full cursor-zoom-in object-contain"
+                  onClick={() => setLightboxOpen(true)}
+                />
                 {caseStudy.imageCaption ? (
                   <p className="bg-white/[0.03] px-4 py-2 text-center text-xs text-primary/60">{caseStudy.imageCaption}</p>
                 ) : null}
+              </div>
+            ) : null}
+
+            {lightboxOpen && caseStudy.imageSrc ? (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+                onClick={() => setLightboxOpen(false)}
+              >
+                <img
+                  src={caseStudy.imageSrc}
+                  alt={caseStudy.imageCaption || caseStudy.title}
+                  className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                />
               </div>
             ) : null}
           </div>
