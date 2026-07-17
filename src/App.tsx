@@ -1138,7 +1138,7 @@ function Timeline({ locale, mode }: { locale: Locale; mode: DemoMode }) {
   const activeCopy = copy[mode][locale];
 
   return (
-    <div id="timeline" className="mt-4 rounded-2xl bg-[#101010] p-5 sm:p-6 md:p-8">
+    <div id="timeline" className="p-5 sm:p-6 md:p-8">
       <div className="grid gap-7 lg:grid-cols-[0.9fr_1.6fr] lg:items-end">
         <div>
           {activeCopy.timelineTitle ? (
@@ -1362,7 +1362,7 @@ function ContactPanel({ locale, mode }: { locale: Locale; mode: DemoMode }) {
   const activeCopy = copy[mode][locale];
 
   return (
-    <div id="contact" className="mt-4 rounded-2xl bg-[#101010] p-5 sm:p-6 md:p-8">
+    <div id="contact" className="border-t border-primary/10 p-5 sm:p-6 md:p-8">
       <div className="grid gap-7 lg:grid-cols-[0.9fr_1.6fr] lg:items-end">
         <div>
           <p className="text-[10px] uppercase tracking-[0.3em] text-primary/60">contact</p>
@@ -1486,8 +1486,10 @@ export default function App() {
       <Hero locale={locale} mode={mode} setLocale={setLocale} />
       <About locale={locale} mode={mode} />
       <Features locale={locale} mode={mode} />
-      <Timeline locale={locale} mode={mode} />
-      <ContactPanel locale={locale} mode={mode} />
+      <div className="mt-4 rounded-2xl bg-[#101010]">
+        <Timeline locale={locale} mode={mode} />
+        <ContactPanel locale={locale} mode={mode} />
+      </div>
       <BackToTop />
     </main>
   );
