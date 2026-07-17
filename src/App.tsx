@@ -151,17 +151,17 @@ const copy: Record<
       timelineTitle: '',
       timeline: [
         {
-          label: '2026',
+          label: '',
           title: 'AI 辅助快速原型',
           body: '用 Claude Code、CodeX 等工具把模糊想法快速变成可运行 Demo，缩短从概念到验证的周期。',
         },
         {
-          label: '2026',
+          label: '',
           title: '智能体开发工具实践',
           body: '用 Claude Code、CodeX 等智能体开发工具构建复杂项目，实现从想法到可运行系统的快速转化。',
         },
         {
-          label: 'Now',
+          label: '',
           title: '人机协作与质量验收',
           body: '在 AI 自动化流程中保留人工审核节点，定义明确的验收标准，确保交付物可用、可迭代。',
         },
@@ -322,17 +322,17 @@ const copy: Record<
       timelineTitle: '',
       timeline: [
         {
-          label: '2026',
+          label: '',
           title: 'AI-assisted rapid prototyping',
           body: 'Using Claude Code, CodeX, and similar tools to turn vague ideas into runnable demos quickly, shortening the cycle from concept to validation.',
         },
         {
-          label: '2026',
+          label: '',
           title: 'Agent development tooling',
           body: 'Using Claude Code, CodeX, and similar agent development tools to build complex projects, turning ideas into working systems quickly.',
         },
         {
-          label: 'Now',
+          label: '',
           title: 'Human-AI collaboration & quality assurance',
           body: 'Keeping human review nodes in AI automation pipelines, defining clear acceptance criteria to ensure deliverables are usable and iterable.',
         },
@@ -1146,8 +1146,10 @@ function About({ locale, mode }: { locale: Locale; mode: DemoMode }) {
                   key={`${item.label}-${item.title}`}
                   className={`border-primary/10 py-5 md:px-5 md:py-0 ${index > 0 ? 'border-t md:border-l md:border-t-0' : ''}`}
                 >
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{item.label}</p>
-                  <h3 className="mt-3 text-lg leading-tight text-primary">{item.title}</h3>
+                  {item.label ? (
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500">{item.label}</p>
+                  ) : null}
+                  <h3 className={`text-lg leading-tight text-primary ${item.label ? 'mt-3' : ''}`}>{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-gray-400">{item.body}</p>
                 </div>
               ))}
