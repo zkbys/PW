@@ -1054,23 +1054,23 @@ function Hero({
                 {activeCopy.heroStatus}
               </motion.p>
               <motion.div
-                className="flex flex-wrap items-center gap-2"
+                className="flex flex-wrap items-center gap-2 lg:flex-nowrap"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.85, delay: 0.72, ease: easeOut }}
               >
                 <a
                   href="#contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-primary py-1.5 pl-5 pr-1.5 text-sm font-medium text-black transition-[gap,transform] duration-300 hover:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-base"
+                  className="group inline-flex items-center gap-2 rounded-full bg-primary py-1.5 pl-5 pr-1.5 text-sm font-medium text-black transition-[gap,transform] duration-300 hover:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-base lg:py-1.5 lg:pl-5 lg:pr-1.5 lg:text-sm"
                 >
                   <span>{activeCopy.primaryCta}</span>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10">
-                    <ArrowRight className="h-4 w-4 text-primary sm:h-5 sm:w-5" strokeWidth={1.8} />
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10 lg:h-9 lg:w-9">
+                    <ArrowRight className="h-4 w-4 text-primary sm:h-5 sm:w-5 lg:h-4 lg:w-4" strokeWidth={1.8} />
                   </span>
                 </a>
                 <a
                   href="/resume/resume-cn.pdf"
-                  className="inline-flex h-10 items-center gap-2 rounded-full border border-primary/20 bg-black/35 px-4 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black sm:h-11 sm:text-sm"
+                  className="inline-flex h-10 items-center gap-2 rounded-full border border-primary/20 bg-black/35 px-4 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black sm:h-11 sm:text-sm lg:h-10 lg:px-3 lg:text-xs"
                 >
                   <Download className="h-4 w-4" />
                   {activeCopy.resumeCta}
@@ -1079,7 +1079,7 @@ function Hero({
                   href={contactLinks.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-10 items-center gap-2 rounded-full border border-primary/20 bg-black/35 px-4 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black sm:h-11 sm:text-sm"
+                  className="inline-flex h-10 items-center gap-2 rounded-full border border-primary/20 bg-black/35 px-4 text-xs text-primary transition-colors duration-300 hover:bg-primary hover:text-black sm:h-11 sm:text-sm lg:h-10 lg:px-3 lg:text-xs"
                 >
                   <Github className="h-4 w-4" />
                   {activeCopy.githubCta}
