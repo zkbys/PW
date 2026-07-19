@@ -1,0 +1,31 @@
+name: Deploy to CloudBase
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Login CloudBase
+        run: npx -y -p @cloudbase/cli@latest tcb login --apiKeyId "${{ secrets.TENCENT_SECRET_ID }}" --apiKey "${{ secrets.TENCENT_SECRET_KEY }}"
+
+      - name: Deploy to CloudBase static hosting
+        run: npx -y -p @cloudbase/cli@latest tcb hosting deploy ./dist -e pw-d9gh6386k274f5e72
