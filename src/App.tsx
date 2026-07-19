@@ -304,13 +304,13 @@ const copy: Record<
       nav: [
         { label: 'About', href: '#about' },
         { label: 'Work', href: '#portfolio' },
-        { label: 'Timeline', href: '#timeline' },
+        { label: 'Methods', href: '#timeline' },
         { label: 'Contact', href: '#contact' },
       ],
       heroKicker: 'AI Creator / Product Builder / Agent Workflow Designer',
       heroIntro:
         'I am ZKbys, an AI product and agent workflow builder. I turn early ideas into runnable demos, reusable workflows, and visible artifacts across product, content, and creative systems.',
-      heroStatus: '正在寻找 AI 产品 / Agent 工作流 / 创意技术相关机会。',
+      heroStatus: 'Open to AI product, agent workflow, and creative tech roles.',
       primaryCta: 'Contact me',
       resumeCta: 'View Resume',
       githubCta: 'GitHub',
@@ -380,7 +380,7 @@ const copy: Record<
           eyebrow: 'Personal portfolio / frontend system',
           description:
             'The personal website you are viewing, built with React, Vite, Tailwind CSS, and Framer Motion, serving as a living CV for AI product work.',
-          items: ['Component-based visual system', 'A/B and bilingual switching', 'Responsive and motion design'],
+          items: ['Component-based visual system', 'Bilingual switching', 'Responsive and motion design'],
           repo: 'https://github.com/zkbys/PW',
           icon: projectIcons[3],
         },
@@ -646,7 +646,7 @@ const copy: Record<
       nav: [
         { label: 'Identity', href: '#about' },
         { label: 'Works', href: '#portfolio' },
-        { label: 'Method', href: '#timeline' },
+        { label: 'Methods', href: '#timeline' },
         { label: 'Contact', href: '#contact' },
       ],
       heroKicker: 'AI Creator / Product Builder / Prompt Engineer',
@@ -1036,7 +1036,7 @@ function Hero({
                 style={{ color: cream }}
               />
             </div>
-            <div className="flex max-w-md flex-col items-start gap-4 pb-1 sm:gap-5 md:pb-3 lg:col-span-4 lg:pb-8">
+            <div className="flex max-w-lg flex-col items-start gap-4 pb-1 sm:gap-5 md:pb-3 lg:col-span-4 lg:pb-8">
               <motion.p
                 className="text-xs leading-[1.25] text-primary/70 sm:text-sm md:text-base"
                 initial={{ y: 20, opacity: 0 }}

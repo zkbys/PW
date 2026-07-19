@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
-    "deploy": "npm run build && npx -y -p @cloudbase/cli@latest tcb hosting deploy ./dist",
+    "deploy": "npm run build && npx -y -p @cloudbase/cli@latest tcb hosting deploy ./dist -e pw-d9gh6386k274f5e72",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
